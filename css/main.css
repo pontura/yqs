@@ -1,0 +1,236 @@
+body{
+	overflow:auto;
+	text-align:center;
+	background-color:white;
+	//font-family:Tahoma;
+	font-family: 'Oswald', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .w3-slim, .w3-wide{
+	font-family: 'Oswald', sans-serif;
+}
+
+#game-container{
+	margin:auto;
+	position:relative;
+	height: 100vh;
+	width: 56vh;
+	//padding-top: 56.25%;
+	background: gold; /** <-- For the demo **/
+}
+
+#game-content{
+	position:absolute;
+	background:black;
+	top: 0; bottom: 0; left: 0; right: 0;
+}
+
+#game-header{
+	background:black;
+	top: 0;
+	width:100%;
+	text-align:left;
+}
+#game-header h6{
+	background:white;
+	width:140px;
+}
+#game-header p{
+	margin-top: -3px;
+    	margin-bottom: 1px;
+    	font-size: 14px;
+    	line-height: 14px;
+    	color: white;
+}
+
+.game-central{
+	padding:10px;
+}
+
+.game-btn{
+	border-radius: 5px;
+	background:white;
+}
+
+.menu-btn{
+	height:60px;
+}
+
+#game-menu{
+	
+}
+
+#game-menu ul{
+	list-style: none;
+	padding: 0px;
+}
+
+.menu-title{
+	font-size:20px;	
+}
+
+.menu-subtitle{
+	font-size:14px;	
+}
+
+.game-stars-container{
+	margin-top:12px;
+}
+
+.game-stars{
+	font-size:20px;
+}
+
+#logo{
+
+}
+
+ul.topnav {
+	//right:0px;
+	list-style-type: none;
+	padding: 0px;
+	overflow: hidden;
+	padding-left:5%;
+	padding-right:5%;
+	z-index: 200;
+	//float:right;
+	margin-left: 10px;
+}
+ul.topnav li {
+	float: left;
+	margin-right: 5px;
+}
+ul.topnav li a {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 4px 8px;
+	text-decoration: none;
+	transition: 0.3s;
+	font-size: 1.5vw;
+	font-family:Tahoma;
+	font-weight:bold;
+}
+ul.topnav li a:hover {
+	//background-color: #29aae3;
+	//color:white;
+}
+
+ul.topnav li.icon,ul.topnav li.search {display: none;}
+
+.title{
+	color: #545353;
+	font-size: 2.0vw;
+	font-family:Tahoma;
+}
+
+.container{
+	max-width:1024px;
+	margin:auto;	
+}
+
+.gallery{
+	margin-bottom:250px;
+}
+
+.img-circle{
+	border-radius:50%;
+}
+
+.right{
+	float:right;
+}
+
+.btn.btn-webs{
+    background-color: #0099ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8%;
+    padding: 6px 40px;
+    font-size: 2em;
+}
+
+footer{
+	//margin-top:50px;
+	background:#eeeeee;
+	//position:fixed;
+	bottom:0px;
+	width:100%;
+	//padding-top: 10px;
+	//padding-bottom: 10px;
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+@media screen and (max-width:1100px) {
+	.container{
+		//margin:10vw;
+	}
+}
+
+@media screen and (max-width:767px) {
+	
+	header {
+    		height: 120px;
+	}
+
+	#logo img{
+		width:61vw;
+	}
+
+	ul.topnav{
+		position:absolute;
+		padding-left:0px;
+		padding-right:0px;
+		right: 0px;
+		top:0px;
+		margin-top:0px;
+	}
+
+	ul.topnav li:not(:first-child) {display: none;}
+	ul.topnav li.icon {
+		float: right;
+		display: flex;
+		font-size:12px;
+	}
+
+	ul.topnav li a{font-size:2.5vw;}
+
+	ul.topnav li.icon a{font-size:30px;}
+
+	ul.topnav.responsive{
+		position:absolute;
+		top:0px;
+		//left: 169px;
+		margin-bottom: 0px;
+	}
+
+	/*ul.topnav.responsive {position: relative;}*/
+	ul.topnav.responsive li.icon {
+		//margin-top: -20px;
+		//margin-right:100%;
+		font-size:12px;
+	}
+	ul.topnav.responsive li.sectionButt {
+		//float: none;
+		display: inline;
+		margin-top:35px;
+	}
+	ul.topnav.responsive li {
+		display: block;
+		text-align: left;
+		//float: right;
+		//margin-top: 45px;
+		margin-top: 9vw;
+	}
+
+	ul.topnav.responsive li.icon a{font-size:12px;}
+
+	#header-content.responsive{
+		bottom:auto;
+		height:auto;
+	}
+
+	#navTitle{
+		display:inline;
+	}
+}
