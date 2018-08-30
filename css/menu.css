@@ -1,0 +1,40 @@
+.menu-btn{
+	height:12vh;
+	margin-bottom: 4px;
+}
+
+#game-menu{
+	
+}
+
+#game-menu ul{
+	list-style: none;
+	padding: 0px;
+	margin: 8px 0px 8px 0px;
+}
+
+.menu-title{
+	font-size:3.5vh;	
+}
+
+.menu-subtitle{
+	font-size:2.8vh;	
+}
+
+.game-stars-container{
+	margin-top:3vh;
+}
+
+.game-stars{
+	font-size:3.5vh;
+}
+
+.menu-footer-btn{
+	width: 80%;
+	padding: 5%;
+	margin: 4px;
+}
+
+.menu-footer-btn img{
+	width:90%;
+}
