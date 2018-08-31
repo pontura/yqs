@@ -1,0 +1,49 @@
+#game-casual ul{
+	list-style: none;
+	padding: 0px;
+	margin: 8px 0px 8px 0px;
+}
+
+#qdq-header{
+	background-color:white;
+	text-align:left;
+	padding: 0px 0px 1px 5px;
+}
+
+#qdq-header h6{
+	font-size:3.5vh;
+	margin-bottom:1px;
+}
+
+#qdq-header p{
+	font-size:2vh;
+	line-height:2vh;
+	margin-top:1px;
+}
+
+.qdq-btn{
+	background-color: black;
+	color: white;
+	height: 25vh;
+	width: 100%;
+	padding: 1vh 5vh 5vh 5vh;
+}
+
+.qdq-btn img{
+	width:100%;
+}
+
+.qdq-btn p{
+	font-size: 2vh;
+	line-height: 0vh;
+}
+
+.qdq-footer-btn{
+	margin-top: 3vh;
+	color: black;
+	background-color: white;
+	border: none;
+	font-size: 4vh;
+	padding: 1vh 6vh;
+}
+

@@ -1,10 +1,16 @@
+#game-casual ul{
+	list-style: none;
+	padding: 0px;
+	margin: 8px 0px 8px 0px;
+}
+
 .dots {
 	display: inline-block;
-	width: 5vh;
-	height: 5vh;
-	border-radius: 5vh;
-	margin-right:0.6%;
-	margin-left:0.6%;
+	width: 4vh;
+	height: 4vh;
+	border-radius: 4vh;
+	margin-right:0.1vh;
+	margin-left:0.1vh;
 	text-indent: -999em;
 	border: 1px solid #eee;
 	background-color: rgb(68, 68, 68);
@@ -12,9 +18,34 @@
 }
 
 .dots.done{
-	width: 7vh;
-	height: 7vh;
-	border-radius: 7vh;
+	width: 6vh;
+	height: 6vh;
+	border-radius: 6vh;
 	background-color: #fff;
+}
+#casual-card-container{
+	text-align:center;
+	margin:auto;
+}
+.cards{
+	position:absolute;
+	background-color: white;
+	border-radius: 5px;
+	margin-left:3.5vh;	
+	height: 45vh;
+	width: 45vh;
+}
+
+#c2.cards{transform: perspective(500px) translate3d(0px,20px,-20px);background-color:rgba(255,255,255,0.75);}
+#c3.cards{transform: perspective(500px) translate3d(0px,40px,-40px);background-color:rgba(255,255,255,0.5);}
+#c4.cards{transform: perspective(500px) translate3d(0px,60px,-60px);background-color:rgba(255,255,255,0.25);}
+#c5.cards{transform: perspective(500px) translate3d(0px,80px,-80px);background-color:rgba(255,255,255,0.0);}
+
+
+.casual-footer-btn{
+	color: grey;
+	background-color: black;
+	border: none;
+	font-size: 5vh;
 }
 
