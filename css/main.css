@@ -14,16 +14,19 @@ h1, h2, h3, h4, h5, h6, .w3-slim, .w3-wide{
 	margin:auto;
 	position:relative;
 	height: 100vh;
-	width: 56vh;
+	width: 100%;
 	//padding-top: 56.25%;
 	background: gold; /** <-- For the demo **/
 }
 
 #game-content{
-	position:absolute;
-	background:black;
-	top: 0; bottom: 0; left: 0; right: 0;
-	padding: 0px 10px 0px 10px;
+	position: absolute;
+    background: black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px 0px 20px;
 }
 
 #game-header{
@@ -170,11 +173,12 @@ footer{
 		float: right;
 		display: flex;
 		font-size:12px;
+		margin: 19px;
 	}
 
 	ul.topnav li a{font-size:2.5vw;}
 
-	ul.topnav li.icon a{font-size:30px;}
+	ul.topnav li.icon a{font-size:6vh;}
 
 	ul.topnav.responsive{
 		position:absolute;
