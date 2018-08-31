@@ -1,0 +1,67 @@
+#game-normal .game-central{
+	overflow:visible;
+}
+
+#game-normal ul{
+	list-style: none;
+	padding: 0px;
+	margin: 8px 0px 8px 0px;
+}
+
+#game-normal .dots {
+	display: inline-block;
+	width: 4vh;
+	height: 4vh;
+	border-radius: 4vh;
+	margin-right:0.1vh;
+	margin-left:0.1vh;
+	text-indent: -999em;
+	border: 1px solid #eee;
+	background-color: rgb(68, 68, 68);
+	vertical-align:middle;
+}
+
+#game-normal .dots.done{
+	width: 6vh;
+	height: 6vh;
+	border-radius: 6vh;
+	background-color: #fff;
+}
+
+#casual-card-container{
+	text-align:center;
+	margin:auto;
+}
+
+#normal-pregunta{
+	color: white;
+	font-size: 4vh;
+	text-align: left;
+	line-height: 3.5vh;
+	margin: 2vh;
+}
+
+.normal-btn{	
+	border-radius: 10px;
+	margin: 2vh;
+	width: 23vh;
+	height: 23vh;
+	background-color: white;
+}
+
+.normal-btn h6{
+	font-size:4vh;
+	line-height:1vh;
+}
+
+.normal-btn p{
+	font-size:3vh;
+}
+
+.casual-footer-btn{
+	color: grey;
+	background-color: black;
+	border: none;
+	font-size: 5vh;
+}
+

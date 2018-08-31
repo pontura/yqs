@@ -4,7 +4,7 @@
 	margin: 8px 0px 8px 0px;
 }
 
-.dots {
+#game-casual .dots {
 	display: inline-block;
 	width: 4vh;
 	height: 4vh;
@@ -17,7 +17,7 @@
 	vertical-align:middle;
 }
 
-.dots.done{
+#game-casual .dots.done{
 	width: 6vh;
 	height: 6vh;
 	border-radius: 6vh;

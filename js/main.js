@@ -85,6 +85,11 @@ $(document).ready(function() {
 		$(".game-section").hide();
 		$("#game-casual").show();
 	});
+
+	$("#menu-btn-normal").click(function(){
+		$(".game-section").hide();
+		$("#game-normal").show();
+	});
 });
 
 
