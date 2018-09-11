@@ -25,72 +25,24 @@ includeHTML();
     }
 }*/
 
-	function NavToggle() {
-		$(".game-section").hide();
-		$("#game-menu").show();
-	}
+$(document).ready(function() {
 
+	gameApp.init();
 
-
-	$(window).bind('scroll', function(){
-		var t = $(this).scrollTop();
-		var w = $(this).width();
-
-		if (t>100){
-			$('#logoBar').hide();
-
-		}else{
-			if(w>767)$('#logoBar').show();		
-		}
-
+	$("#hamBtn").click(function(){
+		gameApp.mainMenu();
 	});
 
-	window.addEventListener("resize", function() {
-		var t = $(this).scrollTop();
-		if($(window).width()<768){
-			$('#logoBar').hide();
-		}else{
-			if(t<101)$('#logoBar').show();		
-		}
-
-	}, false);
-
-	function fullMaskToggle(){
-		if($('#fullMask').is(":visible") == true)
-			$('#fullMask').hide();
-		else{
-			$('#fullMask').show();
-			NavToggle();$('#fullMask').css("height",$(document).height()+"px");
-		}
-	}
-
-	function closeDialog(e){
-		e.parentElement.style.display='none';	
-		fullMaskToggle();
-	}
-
-	/*$.getJSON( "data/texts.json", function( data ) {
-		$.each( data, function( key, val ) {
-			$("#"+key).html(val);
-		});
-	});*/
-
-$(document).ready(function() {
 	$("#menu-btn-qdq").click(function(){
-		$(".game-section").hide();
-		$("#game-qdq").show();
+		gameApp.loadQDQ();
 	});
 
 	$("#menu-btn-casual").click(function(){
-		$(".game-section").hide();
-		$("#game-casual").show();
+		gameApp.loadCasual();
 	});
 
 	$("#menu-btn-normal").click(function(){
-		$(".game-section").hide();
-		$("#game-normal").show();
+		gameApp.loadNormal();
 	});
 });
-
-
-	NavToggle();
+gameApp.mainMenu();
