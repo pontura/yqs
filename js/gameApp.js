@@ -1,52 +1,18 @@
 var gameApp = (function(){
 
+	var currentCountry = "Colombia";
+	var currentElection = "Presidente";
+
 	var candidates;
 	var questions;
-
-	function questionsByElection (electionName) {
-		/*Given some country and election, get the question file*/
-		election = null
-
-		// Filter by electionName
-		for (var i = 0; i < country.elections.length; i++) {
-			if (country.elections[i]['name'] === electionName) {
-				election = country.elections[i]
-			}
-		}
-
-		$.get(election.questions_url, function( data ) {
-			// Add the question original index
-			
-			//console.log(data);
-			data = cvs2JSO(data);
-			//console.log(data);
-			//
-			data.forEach((question, index) => {
-				question.originalIndex = index
-			})
-
-			questions.selection = randomSubArray(data, election.questions_number)
-			questions.all = data
-
-			// Agrego la propiedad more_options en yqs.questions
-			if (election.hasOwnProperty('more_options')) {
-				questions.more_options = election.more_options
-			} else {
-				questions.more_options = true
-			}
-			
-			console.log(questions);
-		});
-
-		return questions;
-	}
 
 	return {//funcion de inicio de la aplicación
 		init : function(){
 			YQS.init(function(){
 				console.log("init done");
-				candidates = YQS.getCandidatesByCountry("Mexico");
-				questions = YQS.getQuestionsByElection("Presidente");				
+				candidates = YQS.getCandidatesByCountry(currentCountry);
+				questions = YQS.getQuestionsByElection(currentElection);				
+				console.log(candidates);
 			});
 		},
 
@@ -57,7 +23,7 @@ var gameApp = (function(){
 
 		loadCasual : function(){
 			$(".game-section").hide();
-			$("#game-casual").show();
+			$("#game-casual").show();			
 		},
 		
 		loadNormal : function(){
@@ -68,7 +34,33 @@ var gameApp = (function(){
 		loadQDQ : function(){
 			$(".game-section").hide();
 			$("#game-qdq").show();
+
+			qdq.init(candidates[currentElection]);
+			/*let selCandidate = parseInt(candidates[currentElection].length * Math.random());
+			//console.log(selCandidate);
+			let frase = ""
+			while(frase==""){
+				frase = candidates[currentElection][selCandidate]["long_answer"][ parseInt(candidates[currentElection][selCandidate]["long_answer"].length * Math.random())];
+			}
+			$("#qdq-frase").html(frase);
+			console.log(frase);*/
 		},
+
+		setCountry : function(country){
+			currentCountry=country;
+		},
+
+		setElection : function(election){
+			currentElection=election;
+		},
+
+		getCountry : function(){
+			return currentCountry;
+		},
+
+		getElection : function(){
+			return currentElection;
+		}
 
 	};
 

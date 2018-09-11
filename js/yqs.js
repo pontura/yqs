@@ -162,25 +162,24 @@ var YQS = (function(){
 
 function cvs2JSO(csv){
 
-	var lines=csv.split("\n");
+	let lines = Papa.parse(csv);
 
-	var result = [];
+	//console.log(lines);
+	//var lines=csv.split("\n");
 
-	var headers=lines[0].split(",");
+	let result = [];
 
-	for(var i=1;i<lines.length;i++){
-
-		var obj = {};
-		var currentline=lines[i].split(",");
-
-		for(var j=0;j<headers.length;j++){
-			obj[headers[j]] = currentline[j];
+	//var headers=lines[0].split(",");
+	let headers=lines["data"][0];
+	for(let i=1;i<lines["data"].length;i++){
+		let obj = {};
+		//var currentline=lines[i].split(",");
+		for(let j=0;j<headers.length;j++){
+			//obj[headers[j]] = currentline[j];
+			obj[headers[j]] =lines["data"][i][j];
 		}
-
 		result.push(obj);
-
 	}
-
 	return result; //JavaScript object
 	//return JSON.stringify(result); //JSON
 }
