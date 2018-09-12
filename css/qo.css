@@ -13,7 +13,7 @@
     font-size: 2vh;
     line-height: 2.5vh;
     margin-top: 0px;
-    margin-left: 130px;
+    margin-left: 104px;
 }
 #qo-options
 {
@@ -33,6 +33,7 @@
     border-color: #4A164B;
     border-image: none;
     height: auto;
+	font-size:2vh;
 }
 .qo_option button img{
 	height: 10vh;
