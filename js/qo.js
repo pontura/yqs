@@ -1,5 +1,4 @@
-var qdq = (function(){
-
+var qo = (function(){
 
 	var selCandidate = -1;
 	var candidates;

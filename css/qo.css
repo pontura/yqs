@@ -1,0 +1,42 @@
+#qo-header{
+	text-align:left;
+	margin: 10px 40px 40px 40px;
+}
+
+#qo-header img {
+    height: 10vh;
+	float:left;
+	margin-left: -10px;
+}
+
+#qo-header p{
+    font-size: 2vh;
+    line-height: 2.5vh;
+    margin-top: 0px;
+    margin-left: 130px;
+}
+#qo-options
+{
+	overflow-y: scroll; 
+	height:473px;
+}
+.qo_option button {
+    align-items: flex-start;
+    text-align: left;
+    cursor: default;
+    color: white;
+    background-color: #3A113B;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #4A164B;
+    border-image: none;
+    height: auto;
+}
+.qo_option button img{
+	height: 10vh;
+	float:left;
+	margin:20px;
+	
+}

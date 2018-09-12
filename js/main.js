@@ -32,6 +32,10 @@ $(document).ready(function() {
 	$("#hamBtn").click(function(){
 		gameApp.mainMenu();
 	});
+	
+	$("#menu-btn-qo").click(function(){
+		gameApp.loadQO();
+	});
 
 	$("#menu-btn-qdq").click(function(){
 		gameApp.loadQDQ();

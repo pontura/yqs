@@ -282,4 +282,19 @@ footer{
 	#navTitle{
 		display:inline;
 	}
+	
+	.game-central button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: white;
+    background-color: #3A113B;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 5px;
+	border-style: solid;
+    border-color: #4A164B;
+    border-image: none;
+	height:250px;
+}
 }
