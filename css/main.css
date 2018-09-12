@@ -1,13 +1,19 @@
 body{
 	overflow:auto;
 	text-align:center;
-	background-color:white;
+	background-color:#4A164B;
 	//font-family:Tahoma;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Chivo';
+	color:white;
 }
 
-h1, h2, h3, h4, h5, h6, .w3-slim, .w3-wide{
-	font-family: 'Oswald', sans-serif;
+@font-face {
+  font-family: 'Chivo';
+  src: url('../fonts/Chivo/Chivo-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Cubano-Regular';
+  src: url('../fonts/Cubano/Cubano-Regular.otf')  format('truetype');
 }
 
 #game-container{
@@ -16,12 +22,10 @@ h1, h2, h3, h4, h5, h6, .w3-slim, .w3-wide{
 	height: 100vh;
 	width: 100%;
 	//padding-top: 56.25%;
-	background: gold; /** <-- For the demo **/
 }
 
 #game-content{
 	position: absolute;
-    background: black;
     top: 0;
     bottom: 0;
     left: 0;
@@ -30,31 +34,48 @@ h1, h2, h3, h4, h5, h6, .w3-slim, .w3-wide{
 }
 
 #game-header{
-	background: black;
 	top: 0;
 	width: 100%;
 	text-align: left;
-	height: 13vh;
+	height: 12vh;
 }
-#game-header h6{
-	background: white;
-	width: 56%;
-	font-size: 3vh;
+h6{
+	font-size: 3.5vh;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Cubano-Regular' !important;
+    font-weight: 400;
+    margin: 10px 0;
+}
+p{
+	font-family: 'Chivo' !important;
 }
 #game-header p{
 	margin-top: -3px;
 	margin-bottom: 1px;
 	font-size: 2.5vh;
 	line-height: 2.5vh;
-	color: white;
 }
-
+#navigator
+{
+	text-align:center;
+	height:30px;
+	width:100%;
+	margin-top: 34px;
+    margin-bottom: 15px;
+}
+.sectionTitle
+{
+	text-align:center;
+	width:100%;
+}
 .game-central{
-	height: 68vh;
+	height: 65vh;
 	overflow: hidden;
 }
 
 .game-btn{
+	color:black;
 	border-radius: 8px;
 	background:white;
 }
@@ -65,6 +86,27 @@ h1, h2, h3, h4, h5, h6, .w3-slim, .w3-wide{
 
 #logo{
 
+}
+
+.button_bottom button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: white;
+    background-color: #ED337D;
+    box-sizing: border-box;
+    //padding: 2px 6px 3px; 
+    //border-width: 5px;
+   // border-style: solid; 
+    border-color: #4A164B;
+    border-image: none;
+    border-radius: 4px;
+    box-shadow: 4px 5px 0px #B2235C;
+	font-family: 'Chivo';
+	font-size: 3vh;
+	margin: 35px;
+    padding-top: 12px;
+    padding-bottom: 16px;
 }
 
 ul.topnav {
@@ -84,7 +126,6 @@ ul.topnav li {
 }
 ul.topnav li a {
 	display: inline-block;
-	color: white;
 	text-align: center;
 	padding: 4px 8px;
 	text-decoration: none;
@@ -101,7 +142,6 @@ ul.topnav li a:hover {
 ul.topnav li.icon,ul.topnav li.search {display: none;}
 
 .title{
-	color: #545353;
 	font-size: 2.0vw;
 	font-family:Tahoma;
 }
@@ -125,12 +165,38 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 
 .btn.btn-webs{
     background-color: #0099ff;
-    color: white;
     text-decoration: none;
     border-radius: 8%;
     padding: 6px 40px;
     font-size: 2em;
 }
+
+#navigator ul{
+	list-style: none;
+	padding: 0px;
+	margin: 8px 0px 8px 0px;
+}
+
+#navigator .dots {
+	display: inline-block;
+	width: 1.3vh;
+	height: 1.3vh;
+	border-radius: 1.3vh;
+	margin-right:0.2vh;
+	margin-left:0.2vh;
+	text-indent: -999em;
+	//border: 1px solid #eee;
+	background-color: white;
+	vertical-align:middle;
+}
+
+#navigator .dots.done{
+	width: 1.3vh;
+	height: 1.3vh;
+	border-radius: 1.3vh;
+	background-color: #706E6E;
+}
+
 
 footer{
 	//margin-top:50px;
@@ -178,7 +244,7 @@ footer{
 
 	ul.topnav li a{font-size:2.5vw;}
 
-	ul.topnav li.icon a{font-size:6vh;}
+	ul.topnav li.icon a{font-size:5vh;}
 
 	ul.topnav.responsive{
 		position:absolute;
@@ -216,4 +282,19 @@ footer{
 	#navTitle{
 		display:inline;
 	}
+	
+	.game-central button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: white;
+    background-color: #3A113B;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 5px;
+	border-style: solid;
+    border-color: #4A164B;
+    border-image: none;
+	height:250px;
+}
 }

@@ -1,13 +1,6 @@
-#game-casual ul{
-	list-style: none;
-	padding: 0px;
-	margin: 8px 0px 8px 0px;
-}
-
 #qdq-header{
-	background-color:white;
-	text-align:left;
-	padding: 0px 0px 1px 5px;
+	text-align:center;
+	margin: 10px 40px 40px 40px;
 }
 
 #qdq-header h6{
@@ -16,34 +9,43 @@
 }
 
 #qdq-header p{
-	font-size:2vh;
-	line-height:2vh;
-	margin-top:1px;
+    font-size: 2vh;
+    line-height: 2.5vh;
+    margin-top: 0px;	
 }
 
 .qdq-btn{
-	background-color: black;
 	color: white;
-	height: 25vh;
 	width: 100%;
-	padding: 1vh 5vh 5vh 5vh;
 }
 
 .qdq-btn img{
-	width:25%;
+	height:53%;
+	margin-bottom:10px;
 }
 
 .qdq-btn p{
-	font-size: 2vh;
-	line-height: 0vh;
+	margin:0px;
 }
 
 .qdq-footer-btn{
 	margin-top: 3vh;
-	color: black;
-	background-color: white;
 	border: none;
 	font-size: 4vh;
 	padding: 1vh 6vh;
 }
+
+.candidato
+{
+	font-size:1.5vh;
+	line-height: 2vh;
+}
+.partido
+{
+	font-size:1.2vh;
+	font-weight:800;
+	line-height: 2vh;
+}
+
+
 

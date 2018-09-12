@@ -18,7 +18,7 @@
 		<link href="css/casual.css" rel="stylesheet">
 		<link href="css/normal.css" rel="stylesheet">
 		<link href="css/qdq.css" rel="stylesheet">
-
+		<link href="css/qo.css" rel="stylesheet">
 	</head>
 	<!-- NAVBAR
 	 ================================================== -->
@@ -27,11 +27,44 @@
 
 			 <div id='game-content'>
 				 <div id='game-header'>
-					 <h6>YO VOTO INFORMADO</h6>
-					 <p>PRESIDENCIALES<BR>
-					 2019 ARGENTINA</p>
-					 <div  class="w3-col s3 m4 l3" id='logo'><a href="/"></a></div>
 
+					<div id='header-home'>
+						 <h6>YO VOTO INFORMADO</h6>
+						 <p>PRESIDENCIALES<BR>
+						 2019 ARGENTINA</p>
+						 <div  class="w3-col s3 m4 l3" id='logo'>
+						 </div>
+					</div>
+					<div id='header-qdq' class='sectionTitle'>
+						<div id='navigator'>
+							<ul>
+								<div class="dots done" id="p0"></div>
+								<div class="dots" style="" id="p1"></div>
+								<div class="dots" style="" id="p2"></div>
+								<div class="dots" style="" id="p3"></div>
+								<div class="dots" style="" id="p4"></div>
+								<div class="dots" style="" id="p5"></div>
+								<div class="dots" style="" id="p6"></div>
+								<div class="dots" style="" id="p7"></div>
+							</ul>
+						</div>
+						 <h6>¿QUIEN DIJO...</h6>
+					</div>
+					<div id='header-qo' class='sectionTitle'>
+						<div id='navigator'>
+							<ul>
+								<div class="dots done" id="p0"></div>
+								<div class="dots" style="" id="p1"></div>
+								<div class="dots" style="" id="p2"></div>
+								<div class="dots" style="" id="p3"></div>
+								<div class="dots" style="" id="p4"></div>
+								<div class="dots" style="" id="p5"></div>
+								<div class="dots" style="" id="p6"></div>
+								<div class="dots" style="" id="p7"></div>
+							</ul>
+						</div>
+						 <h6>¿QUIE OPINA...</h6>
+					</div>
 
 					 <div class="w3-col s9 m8 l9">    
 						 <ul class="topnav" id="myTopnav">
@@ -49,8 +82,8 @@
 				 <div w3-include-html="menu.html" id='game-menu' class="game-section"></div>
 				 <div w3-include-html="casual.html" id='game-casual' class="game-section"></div>
 				 <div w3-include-html="normal.html" id='game-normal' class="game-section"></div>
+				 <div w3-include-html="qo.html" id='game-qo' class="game-section"></div>
 				 <div w3-include-html="qdq.html" id='game-qdq' class="game-section"></div> 
-
 			 </div>
 		 </div>
 
@@ -62,6 +95,7 @@
 		 <script src="js/include.js"></script>
 		 <script src="js/lib/papaparse.min.js"></script>
 		 <script src="js/yqs.js"></script>
+		 <script src="js/qo.js"></script>
 		 <script src="js/qdq.js"></script>
 		 <script src="js/gameApp.js"></script>
 		 <script src="js/main.js"></script>
