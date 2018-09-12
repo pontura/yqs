@@ -23,7 +23,10 @@
 	height:53%;
 	margin-bottom:10px;
 }
-
+#qdq-options {
+    overflow-y: scroll;
+    height: 401px;
+}
 .qdq-btn p{
 	margin:0px;
 }
