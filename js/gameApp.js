@@ -5,6 +5,15 @@ var gameApp = (function(){
 
 	var candidates;
 	var questions;
+	
+	function showHeader( divToShow )
+	{
+		$("#header-home").hide();
+		$("#header-qdq").hide();
+		
+		$(divToShow).show();
+	}
+	
 
 	return {//funcion de inicio de la aplicación
 		init : function(){
@@ -17,6 +26,7 @@ var gameApp = (function(){
 		},
 
 		mainMenu : function(){
+			showHeader("#header-home");
 			$(".game-section").hide();
 			$("#game-menu").show();
 		},
@@ -32,6 +42,9 @@ var gameApp = (function(){
 		},	
 
 		loadQDQ : function(){
+			
+			showHeader("#header-qdq");
+			
 			$(".game-section").hide();
 			$("#game-qdq").show();
 

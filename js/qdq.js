@@ -1,5 +1,9 @@
 var qdq = (function(){
 
+	function SetHeader() {
+		document.getElementById("header-home").style.display = "none";
+		document.getElementById("header-qdq").style.display = "block";
+	}
 	var selCandidate = -1;
 	var candidates;
 
