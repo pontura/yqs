@@ -140,7 +140,7 @@ var YQS = (function(){
 
 	return {//funcion de inicio de la aplicación
 		init : function(callback){
-			$.get('/static/config.json', function( data ) {
+			$.get('static/config.json', function( data ) {
 				config = data;
 				callback();
 				//console.log(config);

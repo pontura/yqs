@@ -1,0 +1,56 @@
+[
+  {
+    "country_name": "Colombia",
+    "img": "static/colombia/colombia.png",
+    "is_playable": true,
+    "elections": [
+      {
+        "name": "Presidente Segunda Vuelta",
+        "date": "2018/06/17",
+        "is_playable": true,
+        "questions_number": 10,
+        "questions_url": "https://docs.google.com/spreadsheets/d/1o_S_ssdCGjQ3Ff5of8LCPS6yNlhUyboaE8S8jqEBCQQ/export?format=csv&id=1o_S_ssdCGjQ3Ff5of8LCPS6yNlhUyboaE8S8jqEBCQQ&gid=0",
+        "candidates_url": "https://docs.google.com/spreadsheets/d/1mYpUohOcSQPYdDBVcPSmbUUFnwdR1UZsgZQCRp4IbsQ/export?format=csv&id=1mYpUohOcSQPYdDBVcPSmbUUFnwdR1UZsgZQCRp4IbsQ&gid=0"
+      },
+      {
+        "name": "Presidente",
+        "date": "2018/05/27",
+        "is_playable": true,
+        "questions_number": 8,
+        "questions_url": "https://docs.google.com/spreadsheets/d/1o_S_ssdCGjQ3Ff5of8LCPS6yNlhUyboaE8S8jqEBCQQ/export?format=csv&id=1o_S_ssdCGjQ3Ff5of8LCPS6yNlhUyboaE8S8jqEBCQQ&gid=0",
+        "candidates_url": "https://docs.google.com/spreadsheets/d/1fg7Vd3Ka5s6FTNkohyzH4bCEPTMeNyXno9WTOCnXjqU/export?format=csv&id=1fg7Vd3Ka5s6FTNkohyzH4bCEPTMeNyXno9WTOCnXjqU&gid=0"
+      }
+    ]
+  },
+  {
+    "country_name": "Mexico",
+    "img": "static/mexico/mexico.png",
+    "is_playable": true,
+    "elections": [
+      {
+        "name": "Presidente",
+        "date": "2018/07/01",
+        "is_playable": true,
+        "questions_number": 8,
+        "more_options": false,
+        "questions_url": "https://docs.google.com/spreadsheets/d/1mU3L4DxPSRg4Qbclb1tgL6Sn-upWKG9qe3lhiPOSDLE/export?format=csv&id=1mU3L4DxPSRg4Qbclb1tgL6Sn-upWKG9qe3lhiPOSDLE&gid=0",
+        "candidates_url": "https://docs.google.com/spreadsheets/d/1ibpFNT6IErSocDYNpcOYH9M5dt6rDIZThaGcNGU-Gwo/export?format=csv&id=1ibpFNT6IErSocDYNpcOYH9M5dt6rDIZThaGcNGU-Gwo&gid=0"
+      }
+    ]
+  },
+  {
+    "country_name": "Argentina",
+    "img": "static/argentina/argentina.png",
+    "is_playable": true,
+    "elections": [
+      {
+        "name": "Presidente",
+        "date": "2019/08/21",
+        "is_playable": false,
+        "questions_number": 8,
+        "questions_url": "https://docs.google.com/spreadsheets/d/1o_S_ssdCGjQ3Ff5of8LCPS6yNlhUyboaE8S8jqEBCQQ/export?format=csv&id=1o_S_ssdCGjQ3Ff5of8LCPS6yNlhUyboaE8S8jqEBCQQ&gid=0",
+        "candidates_url": "https://docs.google.com/spreadsheets/d/1worWBlxVSM-JNwDHdyvoOx2ncHXhKeN50Qvuar_cIYI/export?format=csv&id=1worWBlxVSM-JNwDHdyvoOx2ncHXhKeN50Qvuar_cIYI&gid=0"
+      }
+    ]
+  }
+]
