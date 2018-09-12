@@ -37,9 +37,10 @@ $(document).ready(function() {
 		gameApp.loadQO();
 	});
 
-	$("#menu-btn-qdq").click(function(){
+	$("#menu-btn-qdq").click(function(){	
 		gameApp.loadQDQ();
 	});
+	console.log("qdq button ok");
 
 	$("#menu-btn-casual").click(function(){
 		gameApp.loadCasual();
@@ -49,4 +50,23 @@ $(document).ready(function() {
 		gameApp.loadNormal();
 	});
 });
+
+function CreateNavigator(divId,dotsNumber){
+	let html = "<div id='navigator'><ul><div class='dots done' id='p0'></div>";
+	for(let i=1;i<dotsNumber;i++)
+		html+="<div class='dots' id='p"+i+"'></div>";	
+
+	html+="</ul></div>";
+	$("#"+divId+" .navigator").html(html);
+}
+
+function SetNavigatorPos(divId,dotNumber){
+	$("#"+divId+" .dots").each(function( index ) {
+		if(index==dotNumber)
+			$( this ).addClass("done");
+		else
+			$( this ).removeClass("done");
+	});
+}
+
 gameApp.mainMenu();

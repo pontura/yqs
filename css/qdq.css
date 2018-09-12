@@ -49,5 +49,13 @@
 	line-height: 2vh;
 }
 
+.qdq-btn.right{
+	background-color:green;
+}
+
+.qdq-btn.wrong{
+	background-color:red;
+}
+
 
 

@@ -1,5 +1,7 @@
 var gameApp = (function(){
 
+	var gameConfig;
+
 	var currentCountry = "Colombia";
 	var currentElection = "Presidente";
 
@@ -18,6 +20,10 @@ var gameApp = (function(){
 
 	return {//funcion de inicio de la aplicación
 		init : function(){
+			$.get('static/gameConfig.json', function( data ) {
+				gameConfig = data;
+				console.log(gameConfig);
+			});
 			YQS.init(function(){
 				candidates = YQS.getCandidatesByCountry(currentCountry);
 				questions = YQS.getQuestionsByElection(currentElection);				
@@ -65,7 +71,7 @@ var gameApp = (function(){
 			$(".game-section").hide();
 			$("#game-qdq").show();
 
-			qdq.init(candidates[currentElection]);
+			qdq.init(candidates[currentElection],gameConfig.qdq);
 			/*let selCandidate = parseInt(candidates[currentElection].length * Math.random());
 			//console.log(selCandidate);
 			let frase = ""
@@ -90,7 +96,7 @@ var gameApp = (function(){
 
 		getElection : function(){
 			return currentElection;
-		}
+		},
 
 	};
 
