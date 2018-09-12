@@ -1,6 +1,5 @@
 var qdq = (function(){
 
-
 	var selCandidate = -1;
 	var candidates;
 
