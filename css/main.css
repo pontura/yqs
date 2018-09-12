@@ -71,7 +71,6 @@ p{
 }
 .game-central{
 	height: 65vh;
-	overflow: hidden;
 }
 
 .game-btn{
@@ -105,8 +104,6 @@ p{
 	font-family: 'Chivo';
 	font-size: 3vh;
 	margin: 35px;
-    padding-top: 12px;
-    padding-bottom: 16px;
 }
 
 ul.topnav {
@@ -196,7 +193,11 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 	border-radius: 1.3vh;
 	background-color: #706E6E;
 }
-
+.game-central
+{
+	overflow-y: auto;
+    height: 650px;
+}
 
 footer{
 	//margin-top:50px;
@@ -297,4 +298,5 @@ footer{
     border-image: none;
 	height:250px;
 }
+
 }

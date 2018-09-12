@@ -1,6 +1,8 @@
+
 #qdq-header{
 	text-align:center;
 	margin: 10px 40px 40px 40px;
+	
 }
 
 #qdq-header h6{
@@ -23,10 +25,7 @@
 	height:53%;
 	margin-bottom:10px;
 }
-#qdq-options {
-    overflow-y: scroll;
-    height: 401px;
-}
+
 .qdq-btn p{
 	margin:0px;
 }

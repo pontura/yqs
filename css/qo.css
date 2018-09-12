@@ -17,8 +17,8 @@
 }
 #qo-options
 {
-	overflow-y: scroll; 
-	height:473px;
+	//overflow-y: scroll; 
+	//height:473px;
 }
 .qo_option button {
     align-items: flex-start;
@@ -40,4 +40,7 @@
 	float:left;
 	margin:20px;
 	
+}
+.qo_option p{
+	width:95%;
 }
