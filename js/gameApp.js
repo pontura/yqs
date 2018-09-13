@@ -22,12 +22,12 @@ var gameApp = (function(){
 		init : function(){
 			$.get('static/gameConfig.json', function( data ) {
 				gameConfig = data;
-				console.log(gameConfig);
+				//console.log(gameConfig);
 			});
 			YQS.init(function(){
 				candidates = YQS.getCandidatesByCountry(currentCountry);
 				questions = YQS.getQuestionsByElection(currentElection);				
-				console.log(candidates);
+				//console.log(candidates);
 			});
 		},
 

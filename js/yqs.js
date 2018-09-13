@@ -132,7 +132,7 @@ var YQS = (function(){
 				questions.more_options = true
 			}
 			
-			console.log(questions);
+			//console.log(questions);
 		});
 
 		return questions;

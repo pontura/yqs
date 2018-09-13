@@ -23,7 +23,6 @@
 }*/
 
 function InitGame(){
-	console.log("aca");
 	gameApp.init();
 
 	$("#hamBtn").click(function(){
@@ -37,7 +36,6 @@ function InitGame(){
 	$("#menu-btn-qdq").click(function(){	
 		gameApp.loadQDQ();
 	});
-	console.log("qdq button ok");
 
 	$("#menu-btn-casual").click(function(){
 		gameApp.loadCasual();
