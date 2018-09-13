@@ -1,6 +1,3 @@
-includeHTML();
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 /*function NavToggle(val) {
     var x = document.getElementById("myTopnav");
     var y = document.getElementById("game-header");
@@ -25,14 +22,14 @@ includeHTML();
     }
 }*/
 
-$(document).ready(function() {
-
+function InitGame(){
+	console.log("aca");
 	gameApp.init();
 
 	$("#hamBtn").click(function(){
 		gameApp.mainMenu();
 	});
-	
+
 	$("#menu-btn-qo").click(function(){
 		gameApp.loadQO();
 	});
@@ -49,6 +46,12 @@ $(document).ready(function() {
 	$("#menu-btn-normal").click(function(){
 		gameApp.loadNormal();
 	});
+}
+
+$(document).ready(function() {
+	includeHTML();
+	setTimeout(function(){InitGame()}, 1000);
+
 });
 
 function CreateNavigator(divId,dotsNumber){
