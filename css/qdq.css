@@ -1,8 +1,7 @@
 
 #qdq-header{
 	text-align:center;
-	margin: 10px 40px 40px 40px;
-	
+	margin: 10px 30px 30px 30px;
 }
 
 #qdq-header h6{
@@ -22,7 +21,7 @@
 }
 
 .qdq-btn img{
-	height:53%;
+	height: 50%;
 	margin-bottom:10px;
 }
 
@@ -39,12 +38,12 @@
 
 .candidato
 {
-	font-size:1.5vh;
+	font-size: 1.7vh;
 	line-height: 2vh;
 }
 .partido
 {
-	font-size:1.2vh;
+	font-size: 1.4vh;
 	font-weight:800;
 	line-height: 2vh;
 }

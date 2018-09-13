@@ -44,8 +44,8 @@ h6{
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Cubano-Regular' !important;
-    font-weight: 400;
-    margin: 10px 0;
+	font-weight: 400;
+	margin: 3px;
 }
 p{
 	font-family: 'Chivo' !important;
@@ -61,16 +61,13 @@ p{
 	text-align:center;
 	height:30px;
 	width:100%;
-	margin-top: 34px;
-    margin-bottom: 15px;
+	margin-top: 12px;
+	margin-bottom: 0px;
 }
 .sectionTitle
 {
 	text-align:center;
 	width:100%;
-}
-.game-central{
-	height: 65vh;
 }
 
 .game-btn{
@@ -80,7 +77,6 @@ p{
 }
 
 .game-footer{
-	//height:
 }
 
 #logo{
@@ -94,16 +90,18 @@ p{
     color: white;
     background-color: #ED337D;
     box-sizing: border-box;
-    //padding: 2px 6px 3px; 
-    //border-width: 5px;
-   // border-style: solid; 
+    //
+    padding: 2px 6px 3px; 
+    //
+    border-width: 5px;
+   //
+    border-style: solid;
     border-color: #4A164B;
     border-image: none;
     border-radius: 4px;
     box-shadow: 4px 5px 0px #B2235C;
-	font-family: 'Chivo';
-	font-size: 3vh;
-	margin: 35px;
+    font-family: 'Chivo';
+    font-size: 3vh;
 }
 
 ul.topnav {
@@ -196,7 +194,7 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 .game-central
 {
 	overflow-y: auto;
-    height: 650px;
+	height: 72vh;
 }
 
 footer{
@@ -291,12 +289,13 @@ footer{
     color: white;
     background-color: #3A113B;
     box-sizing: border-box;
-    padding: 2px 6px 3px;
-    border-width: 5px;
-	border-style: solid;
+    padding: 0px 0px 0px;
+    border-width: 3px;
+    border-style: solid;
     border-color: #4A164B;
     border-image: none;
-	height:250px;
+    height: 24vh;
+    border-radius: 14px;
 }
 
 }

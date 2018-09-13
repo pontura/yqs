@@ -15,8 +15,8 @@ var qdq = (function(){
 			let src = c["photo"].replace('git','');
 			html+="<div class='w3-col s6 m6 l6'><button name="+c["full_name"]+" class='qdq-btn interactable'>"+
 				"<img src="+c["photo"]+">"+
-				"<p>"+c["full_name"]+"</p>"+
-				"<p>"+c["politic_party"]+"</p>"+
+				"<p class='candidato'>"+c["full_name"]+"</p>"+
+				"<p class='partido'>"+c["politic_party"]+"</p>"+
 				"</button></div>";
 		}
 		$("#qdq-options").html(html);
