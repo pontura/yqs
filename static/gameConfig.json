@@ -2,5 +2,10 @@
 	"qdq":{
 		"candidates":4,
 		"questNumber":5
+	},
+
+	"qo":{
+		"candidates":4,
+		"questNumber":5
 	}
 }

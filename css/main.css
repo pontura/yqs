@@ -193,7 +193,7 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 }
 .game-central
 {
-	overflow-y: auto;
+	//overflow-y: auto;
 	height: 72vh;
 }
 
@@ -205,6 +205,10 @@ footer{
 	width:100%;
 	//padding-top: 10px;
 	//padding-bottom: 10px;
+}
+
+.blocked{
+	background-color:#ddd;
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */

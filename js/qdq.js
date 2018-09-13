@@ -41,12 +41,13 @@ var qdq = (function(){
 		$(".qdq-btn").click(function(){
 			if($(this).hasClass("interactable")){
 				if(candidatesSel[selCandidate]["full_name"]==$(this).attr('name')){
-					$(this).addClass('right');
+					$(this).addClass('right-answ');
 					correctAns++;
 				}else{
-					$(this).addClass('wrong');
+					$(this).addClass('wrong-answ');
 				}
 				$(".qdq-btn").removeClass("interactable");
+				setTimeout(function(){Next()}, 1000);
 			}
 		});	
 	}
@@ -63,6 +64,16 @@ var qdq = (function(){
 		}
 	}
 
+	function Next(){
+		navPos++;
+		if(navPos>=config.questNumber){
+			SetSummary();
+		}else{
+			SetNavigatorPos("header-qdq",navPos);				
+			Reset();
+		}
+	}
+
 	return {//funcion de inicio de la aplicación
 		init : function(c,qdqConfig){
 			navPos=0;
@@ -76,13 +87,7 @@ var qdq = (function(){
 			CreateNavigator("header-qdq",config.questNumber);
 
 			$("#qdq-next-btn").unbind().click(function(){
-				navPos++;
-				if(navPos>=config.questNumber){
-					SetSummary();
-				}else{
-					SetNavigatorPos("header-qdq",navPos);				
-					Reset();
-				}
+				Next();
 			});
 		}	
 	};

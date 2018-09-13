@@ -38,13 +38,13 @@ var gameApp = (function(){
 		},
 
 		loadCasual : function(){
-			$(".game-section").hide();
-			$("#game-casual").show();			
+			/*$(".game-section").hide();
+			$("#game-casual").show();*/
 		},
 		
 		loadNormal : function(){
-			$(".game-section").hide();
-			$("#game-normal").show();
+			/*$(".game-section").hide();
+			$("#game-normal").show();*/
 		},	
 
 		loadQO : function(){
@@ -53,16 +53,9 @@ var gameApp = (function(){
 			
 			$(".game-section").hide();
 			$("#game-qo").show();
-
-			//qdq.init(candidates[currentElection]);
-			/*let selCandidate = parseInt(candidates[currentElection].length * Math.random());
-			//console.log(selCandidate);
-			let frase = ""
-			while(frase==""){
-				frase = candidates[currentElection][selCandidate]["long_answer"][ parseInt(candidates[currentElection][selCandidate]["long_answer"].length * Math.random())];
-			}
-			$("#qdq-frase").html(frase);
-			console.log(frase);*/
+			
+			qo.init(candidates[currentElection],questions["all"],gameConfig.qdq);
+			
 		},
 		loadQDQ : function(){
 			

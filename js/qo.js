@@ -1,47 +1,98 @@
 var qo = (function(){
 
+	var config;
 	var selCandidate = -1;
+	var selQuestion = -1;
 	var candidates;
+	var questions;
+	var candidatesSel;
+
+	var navPos=0;
+	var correctAns=0;
+	var summaryDone=false;
 
 	function setOptions(){
 		let html = "";
-		for(let c of candidates){
-			let src = c["photo"].replace('git','');
-			html+="<div class='w3-col s6 m6 l6'><button name="+c["full_name"]+" class='qdq-btn'>"+
-				"<img src="+"../"+src+">"+
-				"<p>"+c["full_name"]+"</p>"+
-				"<p>"+c["politic_party"]+"</p>"+
-				"</button></div>";
+		for(let i=0;i<candidatesSel.length;i++){
+			html+="<div class='qo_option'><button class='interactable' name="+i+"><img src='img/hide.png'><p>"+
+				candidatesSel[i]["long_answer"]+
+				"</p></button></div>";		
 		}
-		$("#qdq-options").html(html);
+		$("#qo-options").html(html);
 	}
 
 	function checkCorrect(){
 
 	}
-	
-	return {//funcion de inicio de la aplicación
-		init : function(c){
-			candidates = randomSubArray(c,4);
-			selCandidate = parseInt(candidates.length * Math.random());
-			console.log(candidates);
-			let frase = ""
-			while(frase==""){
-				frase = candidates[selCandidate]["long_answer"][ parseInt(candidates[selCandidate]["long_answer"].length * Math.random())];
-			}
-			$("#qdq-frase").html(frase);
-			console.log(frase);
-			setOptions();
 
-			$(".qdq-btn").click(function(){
-				console.log(candidates[selCandidate]["full_name"]);
-				console.log($(this).attr('name'));
-				if(candidates[selCandidate]["full_name"]==$(this).attr('name')){
-					$(this).css('background-color','green');
+	function Reset(){
+		candidatesSel = randomSubArray(candidates,config["candidates"]);
+		selCandidate = parseInt(candidatesSel.length * Math.random());
+		selQuestion =  parseInt(questions.length * Math.random());
+		//console.log(questions[selQuestion]);
+		console.log(candidatesSel);
+		
+		$("#qo_question").html(questions[selQuestion]["question"]);
+		$("#qo-header img").attr("src",candidatesSel[selCandidate]["photo"]);
+		$("#qo-candidate-name").html("... "+candidatesSel[selCandidate]["full_name"]+" sobre ...");
+		
+		setOptions();
+
+		$(".qo_option button").click(function(){
+			if($(this).hasClass("interactable")){
+				if(selCandidate==$(this).attr('name')){
+					$(this).addClass('right-answ');
+					
+					correctAns++;
 				}else{
-					$(this).css('background-color','red');
+					$(this).addClass('wrong-answ');
 				}
-			});	
+
+				$(this).children('img').attr("src",candidatesSel[$(this).attr('name')]["photo"]);
+				$(".qo_option button").removeClass("interactable");
+				setTimeout(function(){Next()}, 1000);
+			}
+		});	
+	}
+
+	function SetSummary(){
+		if(summaryDone){
+			gameApp.mainMenu();
+		}else{
+			let percent = correctAns*100/config.questNumber;
+			let html="<div id='qo-summary'><h2>Lograste "+percent+"% de respuestas correctas</h2></div>";
+			$("#qo-options").html(html);
+			$("#qo-header").hide();
+			summaryDone=true;
+		}
+	}
+
+	function Next(){
+		navPos++;
+		if(navPos>=config.questNumber){
+			SetSummary();
+		}else{
+			SetNavigatorPos("header-qo",navPos);				
+			Reset();
+		}
+	}
+
+	return {//funcion de inicio de la aplicación
+		init : function(c,q,qdqConfig){
+			navPos=0;
+			correctAns=0;
+			summaryDone=false;
+			config = qdqConfig;
+			candidates = c;
+			questions = q;
+
+			Reset();
+
+			CreateNavigator("header-qo",config.questNumber);
+
+			$("#qo-next-btn").unbind().click(function(){
+				Next();	
+			});
 		}	
 	};
 })();

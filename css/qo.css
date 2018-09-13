@@ -44,3 +44,11 @@
 .qo_option p{
 	width:95%;
 }
+.qo_option button.right-answ{
+	 border-color:green;
+}
+
+.qo_option button.wrong-answ{
+	 border-color:red;
+}
+

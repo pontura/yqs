@@ -48,11 +48,11 @@
 	line-height: 2vh;
 }
 
-.qdq-btn.right{
+.qdq-btn.right-answ{
 	background-color:green;
 }
 
-.qdq-btn.wrong{
+.qdq-btn.wrong-answ{
 	background-color:red;
 }
 
