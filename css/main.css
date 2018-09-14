@@ -7,6 +7,8 @@ body{
 	color:white;
 }
 
+button:focus { outline:0 !important; }
+
 @font-face {
   font-family: 'Chivo';
   src: url('../fonts/Chivo/Chivo-Regular.ttf')  format('truetype');
