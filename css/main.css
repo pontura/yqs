@@ -193,7 +193,7 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 }
 .game-central
 {
-	//overflow-y: auto;
+	overflow-y: auto;
 	height: 72vh;
 }
 
