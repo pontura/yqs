@@ -86,6 +86,8 @@ var qo = (function(){
 			candidates = c;
 			questions = q;
 
+			$("#qo-header").show();
+
 			Reset();
 
 			CreateNavigator("header-qo",config.questNumber);
