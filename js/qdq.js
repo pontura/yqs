@@ -89,6 +89,10 @@ var qdq = (function(){
 			$("#qdq-next-btn").unbind().click(function(){
 				Next();
 			});
+
+			$("#game-qdq").unbind().on( "swipeleft", function(){
+				Next();	
+			});
 		}	
 	};
 })();

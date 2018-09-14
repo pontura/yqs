@@ -95,6 +95,10 @@ var qo = (function(){
 			$("#qo-next-btn").unbind().click(function(){
 				Next();	
 			});
+
+			$("#game-qo").unbind().on( "swipeleft", function(){
+				Next();	
+			});
 		}	
 	};
 })();

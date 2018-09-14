@@ -211,6 +211,10 @@ footer{
 	background-color:#ddd;
 }
 
+.ui-loader{
+	display:none;
+}
+
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
 @media screen and (max-width:1100px) {
 	.container{
