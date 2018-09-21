@@ -10,9 +10,10 @@ var gameApp = (function(){
 	
 	function showHeader( divToShow )
 	{
-		$("#header-home").hide();
+		/*$("#header-home").hide();
 		$("#header-qdq").hide();
-		$("#header-qo").hide();
+		$("#header-qo").hide();*/
+		$(".sectionHeader").hide();
 		
 		$(divToShow).show();
 	}
@@ -38,8 +39,11 @@ var gameApp = (function(){
 		},
 
 		loadCasual : function(){
-			/*$(".game-section").hide();
-			$("#game-casual").show();*/
+			showHeader("#header-casual");
+			$(".game-section").hide();
+			$("#game-casual").show();
+
+			casual.init(candidates[currentElection],questions["all"],gameConfig.casual);
 		},
 		
 		loadNormal : function(){

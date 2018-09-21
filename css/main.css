@@ -10,12 +10,12 @@ body{
 button:focus { outline:0 !important; }
 
 @font-face {
-  font-family: 'Chivo';
-  src: url('../fonts/Chivo/Chivo-Regular.ttf')  format('truetype');
+	font-family: 'Chivo';
+	src: url('../fonts/Chivo/Chivo-Regular.ttf')  format('truetype');
 }
 @font-face {
-  font-family: 'Cubano-Regular';
-  src: url('../fonts/Cubano/Cubano-Regular.otf')  format('truetype');
+	font-family: 'Cubano-Regular';
+	src: url('../fonts/Cubano/Cubano-Regular.otf')  format('truetype');
 }
 
 #game-container{
@@ -28,11 +28,11 @@ button:focus { outline:0 !important; }
 
 #game-content{
 	position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px 20px 0px 20px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 10px 20px 0px 20px;
 }
 
 #game-header{
@@ -86,24 +86,24 @@ p{
 }
 
 .button_bottom button {
-    align-items: flex-start;
-    text-align: center;
-    cursor: default;
-    color: white;
-    background-color: #ED337D;
-    box-sizing: border-box;
-    //
-    padding: 2px 6px 3px; 
-    //
-    border-width: 5px;
-   //
-    border-style: solid;
-    border-color: #4A164B;
-    border-image: none;
-    border-radius: 4px;
-    box-shadow: 4px 5px 0px #B2235C;
-    font-family: 'Chivo';
-    font-size: 3vh;
+	align-items: flex-start;
+	text-align: center;
+	cursor: default;
+	color: white;
+	background-color: #ED337D;
+	box-sizing: border-box;
+	//
+	padding: 2px 6px 3px; 
+	//
+	border-width: 5px;
+	//
+	border-style: solid;
+	border-color: #4A164B;
+	border-image: none;
+	border-radius: 4px;
+	box-shadow: 4px 5px 0px #B2235C;
+	font-family: 'Chivo';
+	font-size: 3vh;
 }
 
 ul.topnav {
@@ -161,11 +161,11 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 }
 
 .btn.btn-webs{
-    background-color: #0099ff;
-    text-decoration: none;
-    border-radius: 8%;
-    padding: 6px 40px;
-    font-size: 2em;
+	background-color: #0099ff;
+	text-decoration: none;
+	border-radius: 8%;
+	padding: 6px 40px;
+	font-size: 2em;
 }
 
 #navigator ul{
@@ -217,6 +217,39 @@ footer{
 	display:none;
 }
 
+.summary-item{
+	text-align: center;
+	width: 100%;
+	display: flex;
+	margin-bottom: 3vh;
+}
+
+.summary-img{
+	float:left;
+	width: 50%;
+	text-align: right;
+}
+
+.summary-img.first img{
+	width:25vw;
+}
+.summary-img img{
+	width: 15vw;
+	margin-right: 3vw;
+}
+.summary-text.first{
+	padding-top: 12vh;
+	line-height: 4vh;
+}
+.summary-text{
+	float: right;
+	width: 50%;
+	text-align: left;
+	line-height: 12px;
+	padding-top: 5vh;
+}
+
+
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
 @media screen and (max-width:1100px) {
 	.container{
@@ -225,9 +258,9 @@ footer{
 }
 
 @media screen and (max-width:2000px) {//767
-	
+
 	header {
-    		height: 120px;
+		height: 120px;
 	}
 
 	#logo img{
@@ -291,21 +324,21 @@ footer{
 	#navTitle{
 		display:inline;
 	}
-	
+
 	.game-central button {
-    align-items: flex-start;
-    text-align: center;
-    cursor: default;
-    color: white;
-    background-color: #3A113B;
-    box-sizing: border-box;
-    padding: 0px 0px 0px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #4A164B;
-    border-image: none;
-    height: 24vh;
-    border-radius: 14px;
+		align-items: flex-start;
+		text-align: center;
+		cursor: default;
+		color: white;
+		background-color: #3A113B;
+		box-sizing: border-box;
+		padding: 0px 0px 0px;
+		border-width: 3px;
+		border-style: solid;
+		border-color: #4A164B;
+		border-image: none;
+		height: 24vh;
+		border-radius: 14px;
+	}
 }
 
-}

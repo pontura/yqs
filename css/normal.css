@@ -2,13 +2,6 @@
 	overflow:visible;
 }
 
-
-
-#casual-card-container{
-	text-align:center;
-	margin:auto;
-}
-
 #normal-pregunta{
 	color: white;
 	font-size: 4vh;
@@ -35,10 +28,5 @@
 	font-size:3vh;
 }
 
-.casual-footer-btn{
-	color: grey;
-	background-color: black;
-	border: none;
-	font-size: 5vh;
-}
+
 

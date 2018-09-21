@@ -23,23 +23,33 @@
 	border-radius: 6vh;
 	background-color: #fff;
 }
+
 #casual-card-container{
-	text-align:center;
-	margin:auto;
+	text-align: center;
+	margin: auto;
+	width: 45vh;
+	height: 45vh;
+        padding-top: 5vh;
 }
 .cards{
 	position:absolute;
 	background-color: white;
 	border-radius: 5px;
-	margin-left:3.5vh;	
 	height: 45vh;
 	width: 45vh;
 }
 
-#c2.cards{transform: perspective(500px) translate3d(0px,20px,-20px);background-color:rgba(255,255,255,0.75);}
+.cards h4{
+	color: black;
+	line-height: 2.8vh;
+	padding: 12vh 1vh;
+}
+
+/*#c2.cards{transform: perspective(500px) translate3d(0px,20px,-20px);background-color:rgba(255,255,255,0.75);}
 #c3.cards{transform: perspective(500px) translate3d(0px,40px,-40px);background-color:rgba(255,255,255,0.5);}
 #c4.cards{transform: perspective(500px) translate3d(0px,60px,-60px);background-color:rgba(255,255,255,0.25);}
 #c5.cards{transform: perspective(500px) translate3d(0px,80px,-80px);background-color:rgba(255,255,255,0.0);}
+*/
 
 
 .casual-footer-btn{
@@ -48,4 +58,3 @@
 	border: none;
 	font-size: 5vh;
 }
-
