@@ -1,5 +1,5 @@
 #game-normal .game-central{
-	overflow:visible;
+	//overflow:visible;
 }
 
 #normal-pregunta{
@@ -17,6 +17,7 @@
 	height: 23vh;
 	background-color: white;
 	border: none;
+	overflow-y:hidden;
 }
 
 .normal-btn h6{
@@ -25,8 +26,55 @@
 }
 
 .normal-btn p{
-	font-size:3vh;
+	font-size:2.5vh;
+	line-height:2.25vh;
+	font-size: 2.5vh;
+	line-height: 2.25vh;
+	margin: 20px;
+	text-align: left;
 }
 
+#normal-partial-pregunta{
+	font-size: 5vw;
+	line-height: 4vw;
+}
 
+#normal-partial-summary .summary-img {
+	float:left;
+	width: 20%;
+	text-align: right;
+}
 
+#normal-partial-summary .summary-img  img{
+	width: 15vw;
+	margin-right: 3vw;
+}
+
+#normal-partial-summary .summary-text{
+	float: right;
+	width: 80%;
+	text-align: left;
+	line-height: 12px;
+	margin-top: -24px;
+}
+
+#summary-detail-header{
+	width: 100%;
+	height: 100%;
+	margin-bottom: 100px;
+}
+
+.normal-detail-quest{
+	text-align: left;
+	color: white;
+	width: 100%;
+	/* margin: 50px 5px; */
+	padding: 0px 5px;
+}
+
+.normal-detail-answ{
+	text-align: left;
+	color: green;
+	padding-left: 60px;
+	line-height: 16px;
+}

@@ -38,16 +38,21 @@ function InitGame(){
 	});
 
 	$("#menu-btn-casual").click(function(){
+		$.mobile.loading('show');
 		gameApp.loadCasual();
 	});
 
 	$("#menu-btn-normal").click(function(){
 		gameApp.loadNormal();
 	});
+
+	
 }
 
 $(document).ready(function() {
 	includeHTML();
+	$(".game-section").hide();
+	$(".sectionHeader").hide();
 	setTimeout(function(){InitGame()}, 1000);
 
 });
@@ -70,4 +75,4 @@ function SetNavigatorPos(divId,dotNumber){
 	});
 }
 
-gameApp.mainMenu();
+//gameApp.mainMenu();

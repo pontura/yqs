@@ -24,11 +24,21 @@ var gameApp = (function(){
 			$.get('static/gameConfig.json', function( data ) {
 				gameConfig = data;
 				//console.log(gameConfig);
-			});
+			});			
+			
+			setTimeout(function(){$.mobile.loading( "show", {
+			            text: "loading",
+			            textVisible: true,
+			            theme: "b",
+			            textonly: null,
+			            html: ""   });}, 1000);
+
 			YQS.init(function(){
+				
 				candidates = YQS.getCandidatesByCountry(currentCountry);
 				questions = YQS.getQuestionsByElection(currentElection);				
 				//console.log(candidates);
+				gameApp.mainMenu();
 			});
 		},
 
@@ -47,12 +57,13 @@ var gameApp = (function(){
 		},
 		
 		loadNormal : function(){
-			/*$(".game-section").hide();
-			$("#game-normal").show();*/
+			showHeader("#header-normal");
+			$(".game-section").hide();
+			$("#game-normal").show();
+			normal.init(candidates[currentElection],questions["all"],gameConfig.normal);
 		},	
 
 		loadQO : function(){
-			console.log("loadQO");
 			showHeader("#header-qo");
 			
 			$(".game-section").hide();

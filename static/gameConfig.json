@@ -2,6 +2,10 @@
 	"casual":{
 		"questNumber":5
 	},
+
+	"normal":{
+		"questNumber":4
+	},
 	
 	"qdq":{
 		"candidates":4,

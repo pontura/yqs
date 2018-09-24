@@ -25,10 +25,6 @@ var casual = (function(){
 
 	}
 
-	function checkCorrect(){
-
-	}
-
 	function SetSummary(){
 		if(summaryDone){
 			gameApp.mainMenu();
