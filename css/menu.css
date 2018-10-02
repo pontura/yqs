@@ -1,6 +1,11 @@
 .menu-btn{
-	height:12vh;
+	height: 13.6vh;
 	margin-bottom: 4px;
+	background-color:#3A113B;
+	color:white;
+	font-family: 'Cubano-Regular' !important;
+	font-weight: 400;
+	margin: 3px;
 }
 
 #game-menu{
@@ -18,7 +23,8 @@
 }
 
 .menu-subtitle{
-	font-size:2.8vh;	
+	font-size: 2.2vh;	
+	font-family: 'Cubano-Regular' !important;
 }
 
 .game-stars-container{
@@ -38,4 +44,14 @@
 .menu-footer-btn img{
 	/* width:90%; */
 	width: 58px;
+}
+
+#menu-btn-casual-title
+{
+	margin-top: 17px;
+}
+#menu-btn-casual-title_full
+{
+	margin-top: 22px;
+	font-size: 3.8vh;
 }

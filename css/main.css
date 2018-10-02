@@ -39,7 +39,7 @@ button:focus { outline:0 !important; }
 	top: 0;
 	width: 100%;
 	text-align: left;
-	height: 12vh;
+	height: 11vh;
 }
 h6{
 	font-size: 3.5vh;
@@ -47,7 +47,12 @@ h6{
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Cubano-Regular' !important;
 	font-weight: 400;
-	margin: 3px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	line-height: 28px;
+	margin-left: 16px;
+	padding-top: 10px;
+	color: #915792;
 }
 p{
 	font-family: 'Chivo' !important;
@@ -74,7 +79,7 @@ p{
 
 .game-btn{
 	color:black;
-	border-radius: 8px;
+	border-radius: 18px;
 	background:white;
 }
 
@@ -104,6 +109,7 @@ p{
 	box-shadow: 4px 5px 0px #B2235C;
 	font-family: 'Chivo';
 	font-size: 3vh;
+	margin: 16px;
 }
 
 ul.topnav {
@@ -196,7 +202,7 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 .game-central
 {
 	overflow-y: auto;
-	height: 64vh;
+	height: 72vh;
 }
 
 footer{
