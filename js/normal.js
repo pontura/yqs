@@ -109,7 +109,7 @@ var normal = (function(){
 		var html = "";
 		for(let i=0;i<candidates.length;i++){
 			html+="<div class='summary-item'><div class='summary-img'><img src='"+candidates[i]["photo"]+"'></div>"+
-			"<div class='summary-text'><h6>"+candidates[i]["full_name"]+"</h6><br><h6>"+candidates[i]["politic_party"]+"</h6><br>"+
+			"<div class='summary-text'><h7>"+candidates[i]["full_name"]+"</h7><br><h8>"+candidates[i]["politic_party"]+"</h8><br>"+
 			"<p>"+candidates[i]["long_answer"][questions[navPos]['originalIndex']]+"</div></div>";	
 		}
 		$("#normal-partial-options").html(html);

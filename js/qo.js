@@ -34,7 +34,7 @@ var qo = (function(){
 		
 		$("#qo_question").html(questions[selQuestion]["question"]);
 		$("#qo-header img").attr("src",candidatesSel[selCandidate]["photo"]);
-		$("#qo-candidate-name").html("... "+candidatesSel[selCandidate]["full_name"]+" sobre ...");
+		$("#qo-candidate-name").html(candidatesSel[selCandidate]["full_name"]+" sobre...");
 		
 		setOptions();
 
