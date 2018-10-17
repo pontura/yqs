@@ -294,6 +294,16 @@ footer{
 	color:white;
 }
 
+.summary-text h7{
+	font-size: 1.1em;
+	color:white;
+}
+.summary-text h8{
+	font-size: 1.1em;
+	color:white;
+}
+
+
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
 @media screen and (max-width:1100px) {
@@ -380,11 +390,11 @@ footer{
 		padding: 0px 0px 0px;
 		border-width: 3px;
 		border-style: solid;
-		border-color: #4A164B;
+		border-color: #3a113b;
 		border-image: none;
-		height: 23vh;
+		/* height: 21vh; */
 		border-radius: 14px;
-		width: 91%;
+		width: 95%;
 	}
 }
 

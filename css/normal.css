@@ -1,7 +1,11 @@
-#game-normal .game-central{
-	//overflow:visible;
-}
+#game-normal .game-central {
+    //overflow: visible;
 
+}
+#game-normal .normal-btn {
+   height: 198px;
+   overflow: visible;
+}
 #normal-pregunta{
 	color: white;
 	font-size: 3vh;
@@ -29,9 +33,9 @@
 .normal-btn p{
 	font-size:2.5vh;
 	line-height:2.25vh;
-	font-size: 2.1vh;
+	font-size: 1.9vh;
 	line-height: 2.25vh;
-	margin: 20px;
+	margin: 11px;
 	text-align: left;
 }
 
@@ -59,7 +63,7 @@
 	width: 80%;
 	text-align: left;
 	line-height: 12px;
-	margin-top: -49px;
+	margin-top: -5px;
 }
 
 #summary-detail-header{
