@@ -16,7 +16,7 @@ var casual = (function(){
 		for(let i=navPos;i<questions.length;i++){
 			html+="<div class='cards' id='c"+i+"' style=";
 			if(i>navPos)
-				html+="'transform: perspective(500px) translate3d(0px,"+((i-navPos)*20)+"px,"+((i-navPos)*-20)+"px);background-color:rgba(255,255,255,"+((questions.length-i+navPos)*stepAlpha)+");'";
+				html+="'transform: perspective(500px) translate3d(0px,"+((i-navPos)*20)+"px,"+((i-navPos)*-20)+"px);background-color:rgba(255,168,0,"+((questions.length-i+navPos)*stepAlpha)+");'";
 			html+="><h4>"+questions[i]["question"]+"</h4></div>";
 		}
 		html+="</div>";
