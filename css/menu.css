@@ -19,7 +19,7 @@
 }
 
 .menu-title{
-	font-size:3.5vh;	
+	font-size: 3.1vh;
 }
 
 .menu-subtitle{
@@ -52,10 +52,11 @@
 
 #menu-btn-casual-title
 {
-	margin-top: 27px;
+	margin-top: 28px;
 	margin-left: 10px;
 	/* width: 70%; */
 	float: left;
+	line-height: 1;
 }
 #menu-btn-casual-title_full
 {
