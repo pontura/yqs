@@ -39,7 +39,7 @@ button:focus { outline:0 !important; }
 	top: 0;
 	width: 100%;
 	text-align: left;
-	height: 11vh;
+	/* height: 9vh; */
 }
 h6{
 	font-size: 3.5vh;
@@ -222,7 +222,7 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 .game-central
 {
 	overflow-y: auto;
-	height: 72vh;
+	/* height: 100%; */
 }
 
 footer{

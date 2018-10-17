@@ -28,7 +28,9 @@
 }
 
 .game-stars-container{
-	margin-top:3vh;
+	margin-top: 3vh;
+	margin-right: 16px;
+	float: right;
 }
 
 .game-stars{
@@ -48,7 +50,10 @@
 
 #menu-btn-casual-title
 {
-	margin-top: 17px;
+	margin-top: 27px;
+	margin-left: 10px;
+	/* width: 70%; */
+	float: left;
 }
 #menu-btn-casual-title_full
 {
