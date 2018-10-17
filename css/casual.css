@@ -33,16 +33,17 @@
 }
 .cards{
 	position:absolute;
-	background-color: white;
+	background-color: #FFA800;
 	border-radius: 5px;
 	height: 45vh;
 	width: 45vh;
 }
 
 .cards h4{
-	color: black;
-	line-height: 2.8vh;
+	color: white;
 	padding: 12vh 1vh;
+	width: 85%;
+	margin: auto;
 }
 
 /*#c2.cards{transform: perspective(500px) translate3d(0px,20px,-20px);background-color:rgba(255,255,255,0.75);}
@@ -53,8 +54,8 @@
 
 
 .casual-footer-btn{
-	color: grey;
-	background-color: black;
+	color: #6e456f;
+	background-color: #4a164b;
 	border: none;
 	font-size: 5vh;
 }

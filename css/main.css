@@ -222,7 +222,7 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 .game-central
 {
 	overflow-y: auto;
-	/* height: 100%; */
+	height: 72vh;
 }
 
 footer{
@@ -248,11 +248,12 @@ footer{
 	width: 100%;
 	display: flex;
 	margin-bottom: 3vh;
+	margin-top: 16px;
 }
 
 .summary-img{
 	float:left;
-	width: 50%;
+	width: 41%;
 	text-align: right;
 }
 
@@ -264,17 +265,33 @@ footer{
 	margin-right: 3vw;
 }
 .summary-text.first{
-	padding-top: 12vh;
+	/* padding-top: 12vh; */
 	line-height: 4vh;
 }
 .summary-text{
 	float: right;
 	width: 50%;
 	text-align: left;
-	padding-top: 5vh;
+	padding-top: 6px;
 }
 .summary-text p{
 	line-height: 2vh;
+}
+.summary-text h1{
+	font-size:1.8em;
+	color:white;
+}
+.summary-text h2{
+	font-size: 1.2em;
+	color:white;
+}
+.summary-text h3{
+	font-size: 1.6em;
+	color:white;
+}
+.summary-text h4{
+	font-size: 1.1em;
+	color:white;
 }
 
 

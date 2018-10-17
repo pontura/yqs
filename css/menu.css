@@ -38,9 +38,11 @@
 }
 
 .menu-footer-btn{
-	/* width: 80%; */
+	width: 85%;
 	padding: 5%;
 	margin: 4px;
+	height: 92px;
+	border-color: #0000008c;
 }
 
 .menu-footer-btn img{
@@ -59,4 +61,16 @@
 {
 	margin-top: 22px;
 	font-size: 3.8vh;
+}
+#footerHomeBtn1
+{
+	background-color:#EF2676;
+}
+#footerHomeBtn2
+{
+	background-color:#F9C728;
+}
+#footerHomeBtn3
+{
+	background-color:#4EE3F3;
 }
