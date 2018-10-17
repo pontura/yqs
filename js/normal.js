@@ -60,14 +60,14 @@ var normal = (function(){
 			for(let i=0;i<afinidad.length;i++){
 				if(i==0){
 					html+="<div class='summary-item' name='"+i+"'><div class='summary-img first'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-						"<div class='summary-text first'><h1>"+afinidad[i]["porcentaje"]+"%</h1><br><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
+						"<div class='summary-text first'><h1>"+afinidad[i]["porcentaje"].toFixed(2)+"%</h1><br><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
 				}else{
 					if(+afinidad[i]["porcentaje"]==+afinidad[0]["porcentaje"]){
 						html+="<div class='summary-item' name='"+i+"'><div class='summary-img first'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-							"<div class='summary-text first'><h1>"+afinidad[i]["porcentaje"]+"%</h1><br><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
+							"<div class='summary-text first'><h1>"+afinidad[i]["porcentaje"].toFixed(2)+"%</h1><br><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
 					}else{
 						html+="<div class='summary-item' name='"+i+"'><div class='summary-img'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-							"<div class='summary-text'><h3>"+afinidad[i]["porcentaje"]+"%</h3><br><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
+							"<div class='summary-text'><h3>"+afinidad[i]["porcentaje"].toFixed(2)+"%</h3><br><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
 					}
 				}
 			}
@@ -89,7 +89,7 @@ var normal = (function(){
 		var html="";
 	
 		html+="<div id='summary-detail-header'><div class='summary-img'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-		"<div class='summary-text'><h3>"+afinidad[i]["porcentaje"]+"%</h3><br><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
+		"<div class='summary-text'><h3>"+afinidad[i]["porcentaje"].toFixed(2)+"%</h3><br><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
 
 		for(let j=0;j<questions.length;j++){
 			html+="<div class='normal-detail-quest'><p>"+questions[j]['question']+"</p></div>";
