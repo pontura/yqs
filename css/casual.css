@@ -54,7 +54,8 @@
 
 
 .casual-footer-btn{
-	color: #6e456f;
+	font-family: 'Cubano-Regular' !important;
+	color: #a48aa5;
 	background-color: #4a164b;
 	border: none;
 	font-size: 5vh;
