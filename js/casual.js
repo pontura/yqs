@@ -28,6 +28,12 @@ var casual = (function(){
 
 	}
 
+	function SetAnswerVal(val){
+		let ans = { sort_answer:val, originalIndex:questions[navPos]["originalIndex"]};
+		answers.push(ans);
+		gameApp.addAnswer(ans);
+	}
+
 	function SetSummary(){
 		if(summaryDone){
 			gameApp.mainMenu();
@@ -36,11 +42,11 @@ var casual = (function(){
 			for(let i=0;i<candidates.length;i++){
 				let puntos=0;
 				for(let j=0;j<answers.length;j++){
-					if(answers[j]==1){
-						if(answers[j]<=candidates[i]["sort_answer"][questions[j]["originalIndex"]])
+					if(answers[j]["sort_answer"]==1){
+						if(answers[j]["sort_answer"]<=candidates[i]["sort_answer"][questions[j]["originalIndex"]])
 							puntos++;
 					}else{
-						if(answers[j]>=candidates[i]["sort_answer"][questions[j]["originalIndex"]])
+						if(answers[j]["sort_answer"]>=candidates[i]["sort_answer"][questions[j]["originalIndex"]])
 							puntos++;
 					}
 				}
@@ -67,14 +73,14 @@ var casual = (function(){
 			for(let i=0;i<afinidad.length;i++){
 				if(i==0){
 					html+="<div class='summary-item'><div class='summary-img first'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-						"<div class='summary-text first'><h1>"+afinidad[i]["porcentaje"].toFixed(2)+"%</h1><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
+						"<div class='summary-text first'><h1>"+Math.round(afinidad[i]["porcentaje"])+" %</h1><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
 				}else{
 					if(+afinidad[i]["porcentaje"]==+afinidad[0]["porcentaje"]){
 						html+="<div class='summary-item'><div class='summary-img first'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-							"<div class='summary-text first'><h1>"+afinidad[i]["porcentaje"].toFixed(2)+"%</h1><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
+							"<div class='summary-text first'><h1>"+Math.round(afinidad[i]["porcentaje"])+" %</h1><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
 					}else{
 						html+="<div class='summary-item'><div class='summary-img'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-							"<div class='summary-text'><h3>"+afinidad[i]["porcentaje"].toFixed(2)+"%</h3><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
+							"<div class='summary-text'><h3>"+Math.round(afinidad[i]["porcentaje"])+" %</h3><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
 					}
 				}
 			}
@@ -131,13 +137,17 @@ var casual = (function(){
 
 			$("#game-casual").unbind().on( "swipeleft", function(){
 				//console.log("left");
-				answers.push(2);
+				//answers.push(2);
+				SetAnswerVal(2);
+				console.log(answers);
 				Next("-=1000");	
 			});
 
 			$("#game-casual").on( "swiperight", function(){
 				//console.log("right");
-				answers.push(1);
+				//answers.push(1);
+				SetAnswerVal(1);
+				console.log(answers);
 				Next("+=1000");	
 			});
 		}	

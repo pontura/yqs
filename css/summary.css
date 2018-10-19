@@ -1,0 +1,68 @@
+#game-summary .game-central {
+    overflow:unset;
+    height: 100%;
+    margin-bottom: 125px;
+}
+#game-summary .button_bottom {
+    position: fixed;
+    bottom: 0;
+    width: 110%;
+    height:190px;
+    margin-left	:-14px;
+}
+#game-summary .normal-btn {
+   min-height: 30vh;
+   overflow: visible;
+}
+
+.summary-btn{	
+	border-radius: 10px;
+	margin: 1vh;
+	width: 23vh;
+	height: 23vh;
+	background-color: white;
+	border: none;
+	overflow-y:hidden;
+}
+
+.summary-btn h6{
+	font-size:4vh;
+	line-height:1vh;
+}
+
+.summary-btn p{
+	font-size:2.5vh;
+	line-height:2.25vh;
+	font-size: 2.15vh;
+	line-height: 2.5vh;
+	margin: 11px;
+	text-align: left;
+}
+
+#summary-detail-header{
+	width: 100%;
+	height: 100%;
+	margin-bottom: 100px;
+}
+
+.summary-detail-quest{
+	text-align: left;
+	color: white;
+	width: 100%;
+	/* margin: 50px 5px; */
+	padding: 0px 5px;
+}
+
+.summary-detail-answ{
+	text-align: left;
+	color: green;
+	padding-left: 60px;
+	line-height: 16px;
+}
+
+.summary-footer-btn {
+    margin-top: 1vh;
+    border: none;
+    font-size: 4vh;
+    padding: 1vh 6vh;
+}

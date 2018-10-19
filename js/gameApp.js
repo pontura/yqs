@@ -7,6 +7,8 @@ var gameApp = (function(){
 
 	var candidates;
 	var questions;
+
+	var answers=[];
 	
 	function showHeader( divToShow )
 	{
@@ -38,6 +40,7 @@ var gameApp = (function(){
 				candidates = YQS.getCandidatesByCountry(currentCountry);
 				questions = YQS.getQuestionsByElection(currentElection);				
 				//console.log(candidates);
+				console.log(questions);
 				gameApp.mainMenu();
 			});
 		},
@@ -90,6 +93,13 @@ var gameApp = (function(){
 			console.log(frase);*/
 		},
 
+		loadSummary : function(){
+			showHeader("#header-summary");
+			$(".game-section").hide();
+			$("#game-summary").show();
+			summary.init(candidates[currentElection],questions["all"],answers);
+		},
+
 		setCountry : function(country){
 			currentCountry=country;
 		},
@@ -105,6 +115,14 @@ var gameApp = (function(){
 		getElection : function(){
 			return currentElection;
 		},
+
+		addAnswer : function(ans){
+			answers.push(ans);
+		},
+
+		getAnswers : function(){
+			return answers;
+		}
 
 	};
 

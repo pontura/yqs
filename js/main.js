@@ -46,6 +46,11 @@ function InitGame(){
 		gameApp.loadNormal();
 	});
 
+	$("#footerHomeBtn3").click(function(){
+		gameApp.loadSummary();
+	});
+	
+
 	
 }
 
