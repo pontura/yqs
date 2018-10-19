@@ -19,7 +19,7 @@ var casual = (function(){
 				html+="'transform: perspective(500px) translate3d(0px,"+((i-navPos)*20)+"px,"+((i-navPos)*-20)+"px);background-color:rgba(255,168,0,"+((questions.length-i+navPos)*stepAlpha)+");'";
 				html+="><h4></h4></div>";
 			}else{
-				html+="><h4>"+questions[i]["question"]+"</h4></div>";
+				html+="><div class='casualField'>"+questions[i]["question"]+"</div></div>";
 			}
 		}
 		html+="</div>";

@@ -3,6 +3,11 @@
 	height: 21vh;
 	margin-bottom: 7px;
 }
+#game-qdq .button_bottom
+{
+	margin-bottom:150px;
+}
+
 #qdq-header{
 	text-align:center;
 	margin: 10px 30px 30px 10px;
