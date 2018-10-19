@@ -32,14 +32,18 @@ button:focus { outline:0 !important; }
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 10px 20px 0px 20px;
+	padding: 0px;
+	/* margin-top: 79px; */
+	/* margin-bottom: 500px; */
 }
 
 #game-header{
 	top: 0;
 	width: 100%;
 	text-align: left;
-	/* height: 9vh; */
+	height: 10vh;
+	position: fixed;
+	background-color: #4a164b;
 }
 h6{
 	font-size: 3.5vh;
@@ -51,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0px;
 	line-height: 28px;
 	/* margin-left: 16px; */
-	padding-top: 10px;
+	padding-top: 0px;
 	color: #915792;
 	font-size: 1.2em;
 }
@@ -197,7 +201,7 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 #navigator ul{
 	list-style: none;
 	padding: 0px;
-	margin: 8px 0px 8px 0px;
+	margin: 0px;
 }
 
 #navigator .dots {
@@ -219,10 +223,17 @@ ul.topnav li.icon,ul.topnav li.search {display: none;}
 	border-radius: 1.3vh;
 	background-color: #706E6E;
 }
+#mainmenu
+{
+	/* overflow-y: unset !important; */
+}
 .game-central
 {
-	overflow-y: auto;
-	height: 68vh;
+	/* overflow-y: auto; */
+	/* height: 67vh; */
+	margin-top: 11vh;
+	padding-left: 2vh;
+	padding-right: 2vh;
 }
 
 footer{
@@ -275,7 +286,7 @@ footer{
 	padding-top: 6px;
 }
 .summary-text p{
-	line-height: 2vh;
+	line-height: 2.5vh;
 }
 .summary-text h1{
 	font-size:1.8em;
@@ -336,7 +347,7 @@ footer{
 		float: right;
 		display: flex;
 		font-size:12px;
-		margin: 19px;
+		margin: 10px;
 	}
 
 	ul.topnav li a{font-size:2.5vw;}

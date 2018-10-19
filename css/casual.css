@@ -3,7 +3,21 @@
 	padding: 0px;
 	margin: 8px 0px 8px 0px;
 }
-
+#game-casual .game-footer{
+	margin-top: 98px;
+}
+#game-casual .button_bottom{
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #4a164b;
+    margin-left: -14px;
+}
+.navigator
+{
+	margin-bottom:-10px;
+}
 #game-casual .dots {
 	display: inline-block;
 	width: 4vh;
@@ -16,7 +30,10 @@
 	background-color: rgb(68, 68, 68);
 	vertical-align:middle;
 }
-
+.cardContainer
+{
+	height:100%;
+}
 #game-casual .dots.done{
 	width: 6vh;
 	height: 6vh;
@@ -44,6 +61,10 @@
 	padding: 3vh 1vh;
 	width: 85%;
 	margin: auto;
+	/* height: 100%; */
+	text-align: center;
+	font-size: 3vh;
+	line-height: 4vh;
 }
 
 /*#c2.cards{transform: perspective(500px) translate3d(0px,20px,-20px);background-color:rgba(255,255,255,0.75);}

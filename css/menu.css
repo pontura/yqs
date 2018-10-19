@@ -5,7 +5,7 @@
 	color:white;
 	font-family: 'Cubano-Regular' !important;
 	font-weight: 400;
-	margin: 3px;
+	/* margin: 3px; */
 }
 
 #game-menu{
@@ -38,16 +38,16 @@
 }
 
 .menu-footer-btn{
-	width: 85%;
+	width: 75%;
 	padding: 5%;
 	margin: 4px;
-	height: 92px;
+	height: 84px;
 	border-color: #0000008c;
 }
 
 .menu-footer-btn img{
 	/* width:90%; */
-	width: 58px;
+	width: 43px;
 }
 
 #menu-btn-casual-title

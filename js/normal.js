@@ -13,7 +13,8 @@ var normal = (function(){
 	var cantOpt = 4;
 
 	function setCards(){
-		$("#normal-partial-summary").hide();
+		$("#normal-partial-summary").hide();		
+		$("#normal-footer").hide();
 		$("#normal-next-btn").hide();
 		$("#normal-quest").show();
 		$("#yes_btn p").text(questions[navPos]['yes']);
@@ -95,7 +96,7 @@ var normal = (function(){
 			html+="<div class='normal-detail-quest'><p>"+questions[j]['question']+"</p></div>";
 			html+="<div class='normal-detail-answ'><p>"+candidates[afinidad[i]["id"]]["long_answer"][questions[j]['originalIndex']]+"</p></div>";			
 		}
-
+		$("#normal-footer").show();
 		$("#normal-summary-detail").show();
 		$("#normal-summary-detail").html(html);	
 		$("#normal-next-btn").hide();
@@ -114,6 +115,7 @@ var normal = (function(){
 		}
 		$("#normal-partial-options").html(html);
 		$("#normal-quest").hide();
+		$("#normal-footer").show();
 		$("#normal-next-btn").show();
 		//setTimeout(function(){setCards()}, 5000);		
 	}
