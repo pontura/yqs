@@ -51,7 +51,9 @@ function InitGame(){
 	});
 	
 
-	
+	$(".popup-close-btn").click(function(){
+		$(".popup").hide();
+	});	
 }
 
 $(document).ready(function() {

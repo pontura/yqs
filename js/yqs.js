@@ -100,7 +100,7 @@ var YQS = (function(){
 		return candidates;
 	}
 
-	function questionsByElection (electionName) {
+	function questionsByElection (electionName,callback) {
 		/*Given some country and election, get the question file*/
 		election = null
 
@@ -131,7 +131,7 @@ var YQS = (function(){
 			} else {
 				questions.more_options = true
 			}
-			
+			callback(questions.all);
 			//console.log(questions);
 		});
 

@@ -8,7 +8,11 @@ var gameApp = (function(){
 	var candidates;
 	var questions;
 
+	var categories = [];
+
 	var answers=[];
+
+	var category2logro_cant = 3;
 	
 	function showHeader( divToShow )
 	{
@@ -20,6 +24,46 @@ var gameApp = (function(){
 		$(divToShow).show();
 	}
 	
+	function getCategories(quest){
+		//console.log(quest);
+		for(q of quest){
+			q["category"]
+			let cat = categories.filter(function (item) {
+				return item.category == q["category"];
+			});
+			if(cat.length==0){
+				let c = { category:q["category"],cant:0,logro:false};
+				categories.push(c);
+			}
+		}
+		//console.log(categories);
+	}
+
+	function setCategories(id){
+		let cat = categories.filter(function (item) {
+				return item.category == questions["all"][id]["category"];
+			});
+		if(cat.length>0){
+			//console.log(cat);
+			cat[0]["cant"]++;
+		}
+
+		for(c of categories){
+			if(!c["logro"]){
+				if(c["cant"]==category2logro_cant){
+					c["logro"]=true;
+					let candid = summary.getCategoryBestWorstCandidates();
+					//alert("sos el mejor "+c["category"]+" de "+candid[0]["full_name"]);
+					//alert("sos el peor "+c["category"]+" de "+candid[1]["full_name"]);
+					$("#achievement-popup").show();
+					$("#achiev-img").attr("src",candid[0]["photo"]);
+					$("#achievement-popup h4").text("sos el mejor "+c["category"]);
+				}
+			}
+		}
+
+		//console.log(categories);
+	}
 
 	return {//funcion de inicio de la aplicación
 		init : function(){
@@ -35,12 +79,11 @@ var gameApp = (function(){
 			            textonly: null,
 			            html: ""   });}, 1000);
 
-			YQS.init(function(){
-				
+			YQS.init(function(){				
 				candidates = YQS.getCandidatesByCountry(currentCountry);
-				questions = YQS.getQuestionsByElection(currentElection);				
+				questions = YQS.getQuestionsByElection(currentElection,getCategories);				
 				//console.log(candidates);
-				console.log(questions);
+				//console.log(questions);
 				gameApp.mainMenu();
 			});
 		},
@@ -118,10 +161,19 @@ var gameApp = (function(){
 
 		addAnswer : function(ans){
 			answers.push(ans);
+			setCategories(ans["originalIndex"]);
 		},
 
 		getAnswers : function(){
 			return answers;
+		},
+
+		getCandidates : function(){
+			return candidates[currentElection];
+		},
+
+		getQuestions : function(){
+			return questions["all"];
 		}
 
 	};

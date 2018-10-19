@@ -10,6 +10,8 @@ var casual = (function(){
 	var navPos=0;
 	var summaryDone=false;
 
+	var cantOpt = 4;
+
 	function setCards(){
 		let html = "<div id='casual-card-container'>";
 		let stepAlpha = 1.0/questions.length;
@@ -34,11 +36,38 @@ var casual = (function(){
 		gameApp.addAnswer(ans);
 	}
 
+	function setAfinidad(){
+		for(let i=0;i<candidates.length;i++){
+			let puntos=0;
+			let cantQ=0;
+			for(let j=0;j<answers.length;j++){
+				if(candidates[i]["sort_answer"][answers[j]["originalIndex"]]>-1){
+					puntos+=Math.abs(answers[j]["sort_answer"]-candidates[i]["sort_answer"][answers[j]["originalIndex"]]);
+					cantQ++;
+				}
+			}
+			let perc = 100*(cantQ*(cantOpt-1)-puntos)/(cantQ*(cantOpt-1));
+			afinidad[i] = {					
+				"porcentaje":perc,
+				"id":i
+			}
+
+			/*afinidad[i]["porcentaje"] =100*puntos*factor;
+				afinidad[i]["id"]=i;*/
+
+			//console.log(candidates[i]["full_name"]+": "+afinidad[i]["porcentaje"]+" cantQ:"+cantQ+" totalP:"+cantQ*(cantOpt-1)+" puntos:"+(cantQ*(cantOpt-1)-puntos));
+		}
+
+		afinidad.sort(function(a, b) {
+			return b.porcentaje - a.porcentaje;
+		});
+	}
+
 	function SetSummary(){
 		if(summaryDone){
 			gameApp.mainMenu();
 		}else{
-			let factor = 1.0/questions.length;
+			/*let factor = 1.0/questions.length;
 			for(let i=0;i<candidates.length;i++){
 				let puntos=0;
 				for(let j=0;j<answers.length;j++){
@@ -56,15 +85,20 @@ var casual = (function(){
 					"id":i
 				}
 
-				/*afinidad[i]["porcentaje"] =100*puntos*factor;
-				afinidad[i]["id"]=i;*/
-
+				//afinidad[i]["porcentaje"] =100*puntos*factor;
+				//afinidad[i]["id"]=i;
+				
 				//console.log(candidates[i]["full_name"]+": "+afinidad[i]["porcentaje"]);
 			}
 
 			afinidad.sort(function(a, b) {
 				return b.porcentaje - a.porcentaje;
-			});
+			});*/
+
+			setAfinidad();
+
+			//console.log(answers);
+			//console.log(afinidad);
 
 			//console.log(afinidad);
 
@@ -139,7 +173,7 @@ var casual = (function(){
 				//console.log("left");
 				//answers.push(2);
 				SetAnswerVal(2);
-				console.log(answers);
+				//console.log(answers);
 				Next("-=1000");	
 			});
 
@@ -147,7 +181,7 @@ var casual = (function(){
 				//console.log("right");
 				//answers.push(1);
 				SetAnswerVal(1);
-				console.log(answers);
+				//console.log(answers);
 				Next("+=1000");	
 			});
 		}	

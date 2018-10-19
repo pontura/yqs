@@ -341,6 +341,49 @@ footer{
 	color:white;
 }
 
+.popup{
+	position: absolute;
+	top: 25%;
+	left: 10%;
+	width: 80%;
+	border-radius: 15px;
+	background-color: #4dc9b9;
+	padding: 60px;
+	display:none;
+	z-index: 10;
+}
+
+#ach-img-cont{
+	position: relative;
+	width: 140px;
+	text-align: center;
+	margin: auto;
+}
+
+#achiev-img{
+	width: 100%;
+}
+#achiev-icon{
+	background: #F9C728;
+	position: absolute;
+	left: -5px;
+	top: -5px;
+	border-radius: 25px;
+	width: 50px;
+	padding: 10px;
+}
+
+.popup-close-btn{
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	border-radius: 80px;
+	background: #39978b;
+	color: white;
+	font-size: 19px;
+	padding: 5px 15px;
+}
+
 
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
@@ -443,8 +486,6 @@ footer{
 		border-radius: 14px;
 		width: 95%;
 	}
-	
-	
+
+
 }
-
-

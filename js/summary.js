@@ -9,67 +9,84 @@ var summary = (function(){
 
 	var cantOpt = 4;
 
-	function SetSummary(){	
-			for(let i=0;i<candidates.length;i++){
-				let puntos=0;
-				let cantQ=0;
-				for(let j=0;j<answers.length;j++){
-					if(candidates[i]["sort_answer"][answers[j]["originalIndex"]]>-1){
-						puntos+=Math.abs(answers[j]["sort_answer"]-candidates[i]["sort_answer"][answers[j]["originalIndex"]]);
-						cantQ++;
-					}
+	function setAfinidad(cat){
+		for(let i=0;i<candidates.length;i++){
+			let puntos=0;
+			let cantQ=0;
+			for(let j=0;j<answers.length;j++){
+				//console.log(questions[answers[j]["originalIndex"]]["category"]);
+				if( cat==undefined || cat==questions[answers[j]["originalIndex"]]["category"] ){
+				if(candidates[i]["sort_answer"][answers[j]["originalIndex"]]>-1){
+					puntos+=Math.abs(answers[j]["sort_answer"]-candidates[i]["sort_answer"][answers[j]["originalIndex"]]);
+					cantQ++;
 				}
-				let perc = 100*(cantQ*(cantOpt-1)-puntos)/(cantQ*(cantOpt-1));
-				afinidad[i] = {					
-					"porcentaje":perc,
-					"id":i
 				}
+			}
+			let perc = 100*(cantQ*(cantOpt-1)-puntos)/(cantQ*(cantOpt-1));
 
-				/*afinidad[i]["porcentaje"] =100*puntos*factor;
-				afinidad[i]["id"]=i;*/
-
-				//console.log(candidates[i]["full_name"]+": "+afinidad[i]["porcentaje"]+" cantQ:"+cantQ+" totalP:"+cantQ*(cantOpt-1)+" puntos:"+(cantQ*(cantOpt-1)-puntos));
+			afinidad[i] = {					
+				"porcentaje":perc,
+				"id":i
 			}
 
-			afinidad.sort(function(a, b) {
-				return b.porcentaje - a.porcentaje;
-			});
+			/*afinidad[i]["porcentaje"] =100*puntos*factor;
+				afinidad[i]["id"]=i;*/
 
-			//console.log(afinidad);
+			//console.log(candidates[i]["full_name"]+": "+afinidad[i]["porcentaje"]+" cantQ:"+cantQ+" totalP:"+cantQ*(cantOpt-1)+" puntos:"+(cantQ*(cantOpt-1)-puntos));
+		}
 
-			let html="<h1>AFINIDAD</h1>";
+		afinidad.sort(function(a, b) {
+			return b.porcentaje - a.porcentaje;
+		});
+	}
 
-			for(let i=0;i<afinidad.length;i++){
-				if(i==0){
+	function getBestAfinity(){
+		return candidates[afinidad[0]["id"]];
+	}
+
+	function getWorstAfinity(){
+		return candidates[afinidad[afinidad.length-1]["id"]];
+	}
+
+	function SetSummary(cat){	
+
+		setAfinidad(cat);
+
+		//console.log(afinidad);
+
+		let html="<h1>AFINIDAD</h1>";
+
+		for(let i=0;i<afinidad.length;i++){
+			if(i==0){
+				html+="<div class='summary-item' name='"+i+"'><div class='summary-img first'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
+					"<div class='summary-text first'><h1>"+Math.round(afinidad[i]["porcentaje"])+" %</h1><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
+			}else{
+				if(+afinidad[i]["porcentaje"]==+afinidad[0]["porcentaje"]){
 					html+="<div class='summary-item' name='"+i+"'><div class='summary-img first'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
 						"<div class='summary-text first'><h1>"+Math.round(afinidad[i]["porcentaje"])+" %</h1><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
 				}else{
-					if(+afinidad[i]["porcentaje"]==+afinidad[0]["porcentaje"]){
-						html+="<div class='summary-item' name='"+i+"'><div class='summary-img first'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-							"<div class='summary-text first'><h1>"+Math.round(afinidad[i]["porcentaje"])+" %</h1><h2>"+candidates[afinidad[i]["id"]]["full_name"]+"</h2></div></div>";
-					}else{
-						html+="<div class='summary-item' name='"+i+"'><div class='summary-img'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-							"<div class='summary-text'><h3>"+Math.round(afinidad[i]["porcentaje"])+" %</h3><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
-					}
+					html+="<div class='summary-item' name='"+i+"'><div class='summary-img'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
+						"<div class='summary-text'><h3>"+Math.round(afinidad[i]["porcentaje"])+" %</h3><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
 				}
 			}
+		}
 
-			$("#summary").show();
-			$("#summary").html(html);
+		$("#summary").show();
+		$("#summary").html(html);
 
-			$("#summary .summary-item").unbind().click(function(){
-				summaryDetail($(this).attr("name"))
-			});
+		$("#summary .summary-item").unbind().click(function(){
+			summaryDetail($(this).attr("name"))
+		});
 
-			//$("#summary-header").hide();			
-		
+		//$("#summary-header").hide();			
+
 	}
 
 	function summaryDetail(i){
 		var html="";
-	
+
 		html+="<div id='summary-detail-header'><div class='summary-img'><img src='"+candidates[afinidad[i]["id"]]["photo"]+"'></div>"+
-		"<div class='summary-text'><h3>"+Math.round(afinidad[i]["porcentaje"])+" %</h3><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
+			"<div class='summary-text'><h3>"+Math.round(afinidad[i]["porcentaje"])+" %</h3><h4>"+candidates[afinidad[i]["id"]]["full_name"]+"</h4></div></div>";
 
 		for(let j=0;j<answers.length;j++){
 			html+="<div class='summary-detail-quest'><p>"+questions[answers[j]["originalIndex"]]['question']+"</p></div>";
@@ -98,6 +115,7 @@ var summary = (function(){
 		init : function(c,q,ans){
 			answers=ans;
 			candidates = c;			
+			console.log(candidates);
 
 			questions = q;
 
@@ -109,7 +127,7 @@ var summary = (function(){
 			$("#summary-next-btn").unbind().click(function(){
 				Next();	
 			});			
-			
+
 
 			$("#summary-back-btn").unbind().click(function(){
 				Back();	
@@ -119,6 +137,22 @@ var summary = (function(){
 
 
 			SetSummary();
-		}	
+		},
+
+		getCategoryBestWorstCandidates :  function(cat){
+
+			if(questions==undefined)
+				questions=gameApp.getQuestions();
+
+			if(candidates==undefined)
+				candidates=gameApp.getCandidates();
+
+			SetSummary(cat);
+			let candid = [];
+			candid.push(getBestAfinity());
+			candid.push(getWorstAfinity());
+
+			return candid;
+		}
 	};
 })();
