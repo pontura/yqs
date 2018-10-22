@@ -41,11 +41,11 @@ var summary = (function(){
 	}
 
 	function getBestAfinity(){
-		return candidates[afinidad[0]["id"]];
+		return afinidad[0]["id"];
 	}
 
 	function getWorstAfinity(){
-		return candidates[afinidad[afinidad.length-1]["id"]];
+		return afinidad[afinidad.length-1]["id"];
 	}
 
 	function SetSummary(cat){	
@@ -139,7 +139,7 @@ var summary = (function(){
 			SetSummary();
 		},
 
-		getCategoryBestWorstCandidates :  function(cat){
+		getCategoryBestWorstCandidatesIds :  function(cat){
 
 			if(questions==undefined)
 				questions=gameApp.getQuestions();

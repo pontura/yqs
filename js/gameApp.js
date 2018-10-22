@@ -52,17 +52,25 @@ var gameApp = (function(){
 			if(!c["logro"]){
 				if(c["cant"]==category2logro_cant){
 					c["logro"]=true;
-					let candid = summary.getCategoryBestWorstCandidates();
-					//alert("sos el mejor "+c["category"]+" de "+candid[0]["full_name"]);
-					//alert("sos el peor "+c["category"]+" de "+candid[1]["full_name"]);
-					$("#achievement-popup").show();
+					let candid = summary.getCategoryBestWorstCandidatesIds();
+					/*$("#achievement-popup").show();
 					$("#achiev-img").attr("src",candid[0]["photo"]);
-					$("#achievement-popup h4").text("sos el mejor "+c["category"]);
+					$("#achievement-popup h4").text("sos el mejor "+c["category"]);*/
+					console.log(candidates);
+					console.log(candid[0]);
+					achievements.setAchiev("sos el mejor "+c["category"],c["category"],candid[0]);
+					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],"sos el mejor "+c["category"]);
 				}
 			}
 		}
 
 		//console.log(categories);
+	}
+
+	function ShowAchievPopup(src,text){
+		$("#achievement-popup").show();
+		$("#achiev-img").attr("src",src);
+		$("#achievement-popup h4").text(text);
 	}
 
 	return {//funcion de inicio de la aplicación
@@ -82,7 +90,7 @@ var gameApp = (function(){
 			YQS.init(function(){				
 				candidates = YQS.getCandidatesByCountry(currentCountry);
 				questions = YQS.getQuestionsByElection(currentElection,getCategories);				
-				//console.log(candidates);
+				console.log(candidates);
 				//console.log(questions);
 				gameApp.mainMenu();
 			});
@@ -143,6 +151,13 @@ var gameApp = (function(){
 			summary.init(candidates[currentElection],questions["all"],answers);
 		},
 
+		loadAchievements : function(){
+			showHeader("#header-summary");
+			$(".game-section").hide();
+			$("#game-achievements").show();
+			achievements.init(candidates[currentElection]);
+		},
+
 		setCountry : function(country){
 			currentCountry=country;
 		},
@@ -174,7 +189,9 @@ var gameApp = (function(){
 
 		getQuestions : function(){
 			return questions["all"];
-		}
+		},
+
+		showAchievPopup: ShowAchievPopup
 
 	};
 

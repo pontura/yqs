@@ -46,6 +46,10 @@ function InitGame(){
 		gameApp.loadNormal();
 	});
 
+	$("#footerHomeBtn2").click(function(){
+		gameApp.loadAchievements();
+	})
+
 	$("#footerHomeBtn3").click(function(){
 		gameApp.loadSummary();
 	});
