@@ -9,7 +9,7 @@
 }
 
 #game-menu{
-	
+
 }
 
 #game-menu ul{
@@ -74,4 +74,14 @@
 #footerHomeBtn3
 {
 	background-color:#4EE3F3;
+}
+
+#footerHomeBtn3.blocked{
+	background-color: #777;
+	color: #aaa;
+}
+
+.blocked{
+	background-color: #777;
+	color: #aaa;
 }

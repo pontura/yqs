@@ -115,11 +115,11 @@ var summary = (function(){
 		init : function(c,q,ans){
 			answers=ans;
 			candidates = c;			
-			console.log(candidates);
+			//console.log(candidates);
 
 			questions = q;
 
-			console.log(ans);
+			//console.log(ans);
 			//console.log(questions);
 
 

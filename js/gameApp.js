@@ -2,8 +2,8 @@ var gameApp = (function(){
 
 	var gameConfig;
 
-	var currentCountry = "Colombia";
-	var currentElection = "Presidente";
+	var currentCountry = "Brasil";
+	var currentElection = "Presidente Segunda Vuelta";
 
 	var candidates;
 	var questions;
@@ -26,17 +26,22 @@ var gameApp = (function(){
 	
 	function getCategories(quest){
 		//console.log(quest);
-		for(q of quest){
-			q["category"]
-			let cat = categories.filter(function (item) {
-				return item.category == q["category"];
-			});
-			if(cat.length==0){
-				let c = { category:q["category"],cant:0,logro:false};
-				categories.push(c);
+		$.get(gameConfig.achievements.url, function( data ) {
+			let achievTexts = cvs2JSO(data);
+			for(q of quest){
+				let cat = categories.filter(function (item) {
+					return item.category == q["category"];
+				});				
+				if(cat.length==0){
+					let catConfig = achievTexts.filter(function (item) {
+						return item.category == q["category"];
+					});
+					let c = { category:q["category"],cant:0,logro:false,cant2show:catConfig[0]["cant_resp"],text:catConfig[0]["text_achievement"]};
+					categories.push(c);
+				}
 			}
-		}
-		//console.log(categories);
+			console.log(categories);			
+		});
 	}
 
 	function setCategories(id){
@@ -50,7 +55,7 @@ var gameApp = (function(){
 
 		for(c of categories){
 			if(!c["logro"]){
-				if(c["cant"]==category2logro_cant){
+				if(c["cant"]==c["cant2show"]){
 					c["logro"]=true;
 					let candid = summary.getCategoryBestWorstCandidatesIds();
 					/*$("#achievement-popup").show();
@@ -58,8 +63,8 @@ var gameApp = (function(){
 					$("#achievement-popup h4").text("sos el mejor "+c["category"]);*/
 					console.log(candidates);
 					console.log(candid[0]);
-					achievements.setAchiev("sos el mejor "+c["category"],c["category"],candid[0]);
-					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],"sos el mejor "+c["category"]);
+					achievements.setAchiev(c["text"]+" "+candidates[currentElection][candid[0]]["full_name"],c["category"],candid[0]);
+					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],c["text"]+" "+candidates[currentElection][candid[0]]["full_name"]);
 				}
 			}
 		}
@@ -145,10 +150,12 @@ var gameApp = (function(){
 		},
 
 		loadSummary : function(){
-			showHeader("#header-summary");
-			$(".game-section").hide();
-			$("#game-summary").show();
-			summary.init(candidates[currentElection],questions["all"],answers);
+			if(answers.length>0){
+				showHeader("#header-summary");
+				$(".game-section").hide();
+				$("#game-summary").show();
+				summary.init(candidates[currentElection],questions["all"],answers);
+			}
 		},
 
 		loadAchievements : function(){
@@ -175,6 +182,8 @@ var gameApp = (function(){
 		},
 
 		addAnswer : function(ans){
+			if(answers.length==0)
+				$("#footerHomeBtn3").removeClass("blocked");
 			answers.push(ans);
 			setCategories(ans["originalIndex"]);
 		},

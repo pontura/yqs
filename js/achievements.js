@@ -3,6 +3,7 @@ var achievements = (function(){
 	var config;
 	var candidates;
 
+	var achievTexts;
 	var achievements = [];
 
 	function SetAchiev(){	
@@ -26,8 +27,7 @@ var achievements = (function(){
 
 	function achievDetail(i){
 		let src = candidates[achievements[i]["candidateIndex"]]["photo"];
-		let text = "sos el mejor "+achievements[i]["category"];
-		gameApp.showAchievPopup(src,text);
+		gameApp.showAchievPopup(src,achievements[i]["name"]);
 	}	
 
 	function Back(){
@@ -43,6 +43,7 @@ var achievements = (function(){
 				Back();	
 			});
 
+			console.log(gameApp.achievTexts);
 			SetAchiev();
 		},
 

@@ -1,4 +1,20 @@
 [
+	{
+    "country_name": "Brasil",
+    "img": "static/colombia/colombia.png",
+    "is_playable": true,
+    "elections": [
+      {
+        "name": "Presidente Segunda Vuelta",
+        "date": "2018/06/17",
+        "is_playable": true,
+        "questions_number": 10,
+        "questions_url": "https://docs.google.com/spreadsheets/d/1KqFMsSblN928tZ9vNIsIFPMm-FdT_IXrdUvcVE1uiDs/gviz/tq?tqx=out:csv",
+        "candidates_url": "https://docs.google.com/spreadsheets/d/1mtcwXwfHN2k7RDn9EYOMXOYf4sfFn7UmNZxfIIh86zM/gviz/tq?tqx=out:csv&sheet={sheet_name}"
+      }
+    ]
+  },
+
   {
     "country_name": "Colombia",
     "img": "static/colombia/colombia.png",
