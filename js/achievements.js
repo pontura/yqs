@@ -6,7 +6,7 @@ var achievements = (function(){
 	var achievTexts;
 	var achievements = [];
 
-	function SetAchiev(){	
+	function SetAchiev(){
 
 		let html="<h1><span>"+achievements.length+"</span> LOGROS</h1><ul>";
 
@@ -48,8 +48,26 @@ var achievements = (function(){
 		},
 
 		setAchiev : function(n,cat,cIndex){
+			if(achievements.length==0)
+				$("#achievement_signal").show();					
 			let achiev = { name: n, category:cat, candidateIndex:cIndex};
 			achievements.push(achiev);
+			$("#achievement_signal").text(achievements.length);
+			localStorage.setItem("achievements",  JSON.stringify(achievements));			
+		},
+
+		getAchievements : function(){
+			return achievements;
+		},
+
+		loadAchievData :  function(){
+			let data = localStorage.getItem("achievements");
+			if(data!=null){
+				achievements = JSON.parse(data);
+				$("#achievement_signal").show();
+				$("#achievement_signal").text(achievements.length);
+			}
 		}
+
 	};
 })();

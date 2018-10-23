@@ -109,3 +109,7 @@
 	color: white;
 	font-size: 1em;
 }
+
+#achievement_signal{
+	display:none;
+}

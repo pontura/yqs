@@ -36,7 +36,20 @@ var gameApp = (function(){
 					let catConfig = achievTexts.filter(function (item) {
 						return item.category == q["category"];
 					});
-					let c = { category:q["category"],cant:0,logro:false,cant2show:catConfig[0]["cant_resp"],text:catConfig[0]["text_achievement"]};
+
+					let savedAchivs = achievements.getAchievements();
+
+					let savedAchiv = null;
+					if(savedAchivs!=null){
+						savedAchiv = savedAchivs.filter(function (item) {
+							return item.category == q["category"];
+						});
+					}
+
+					//console.log(savedAchiv[0]);
+
+					let c = { category:q["category"],cant:0,logro:savedAchiv[0]!=undefined,cant2show:catConfig[0]["cant_resp"],text:catConfig[0]["text_achievement"]};
+					//console.log(c);
 					categories.push(c);
 				}
 			}
@@ -62,7 +75,7 @@ var gameApp = (function(){
 					$("#achiev-img").attr("src",candid[0]["photo"]);
 					$("#achievement-popup h4").text("sos el mejor "+c["category"]);*/
 					//console.log(candidates);
-					//console.log(candid[0]);
+					//console.log(candid[0]);					
 					achievements.setAchiev(c["text"]+" "+candidates[currentElection][candid[0]]["full_name"],c["category"],candid[0]);
 					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],c["text"]+" "+candidates[currentElection][candid[0]]["full_name"]);
 				}
@@ -92,7 +105,15 @@ var gameApp = (function(){
 			            textonly: null,
 			            html: ""   });}, 1000);
 
-			YQS.init(function(){				
+			YQS.init(function(){
+				achievements.loadAchievData();
+
+				let data = localStorage.getItem("answers");
+				if(data!=null){
+					answers = JSON.parse(data);
+					$("#footerHomeBtn3").removeClass("blocked");
+				}
+
 				candidates = YQS.getCandidatesByCountry(currentCountry);
 				questions = YQS.getQuestionsByElection(currentElection,getCategories);				
 				//console.log(candidates);
@@ -185,6 +206,7 @@ var gameApp = (function(){
 			if(answers.length==0)
 				$("#footerHomeBtn3").removeClass("blocked");
 			answers.push(ans);
+			localStorage.setItem("answers",  JSON.stringify(answers));
 			setCategories(ans["originalIndex"]);
 		},
 
