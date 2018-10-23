@@ -11,7 +11,7 @@ var achievements = (function(){
 		let html="<h1><span>"+achievements.length+"</span> LOGROS</h1><ul>";
 
 		for(let i=0;i<achievements.length;i++){
-			html+="<li class='achiev-item' name='"+i+"'><img src='img/cup.png'/>"+achievements[i]["name"]+"</li>";
+			html+="<li class='achiev-item' name='"+i+"'><img src='img/cup.png'/><p>"+achievements[i]["name"]+"</p></li>";
 			
 		}
 

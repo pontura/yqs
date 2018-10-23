@@ -84,6 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-top: 0px;
 	color: #915792;
 	font-size: 1.2em;
+	color:;
 }
 h7, h8 {
 	font-family: 'Cubano-Regular' !important;
@@ -346,7 +347,7 @@ footer{
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.75);
 	display:none;
 	z-index: 10;
 }
@@ -357,7 +358,7 @@ footer{
 	left: 10%;
 	width: 80%;
 	border-radius: 15px;
-	background-color: #4dc9b9;
+	background-color: #752a76;
 	padding: 60px;
 }
 
@@ -366,6 +367,12 @@ footer{
 	width: 140px;
 	text-align: center;
 	margin: auto;
+}
+.popup-sign h4
+{
+	color:white;
+	line-height:3vh;
+	margin-top:2vh;
 }
 
 #achiev-img{
@@ -376,20 +383,21 @@ footer{
 	position: absolute;
 	left: -5px;
 	top: -5px;
-	border-radius: 25px;
-	width: 50px;
-	padding: 10px;
+	border-radius: 14px;
+	width: 49px;
+	padding: 11px;
 }
 
 .popup-close-btn{
 	position: absolute;
 	top: -5px;
 	right: -5px;
-	border-radius: 80px;
-	background: #39978b;
+	border-radius: 16px;
+	background: #EF2676;
 	color: white;
 	font-size: 19px;
-	padding: 5px 15px;
+	padding: 13px 22px;
+	margin: 12px;
 }
 
 
