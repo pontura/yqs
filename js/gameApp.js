@@ -40,7 +40,7 @@ var gameApp = (function(){
 					categories.push(c);
 				}
 			}
-			console.log(categories);			
+			//console.log(categories);			
 		});
 	}
 
@@ -61,8 +61,8 @@ var gameApp = (function(){
 					/*$("#achievement-popup").show();
 					$("#achiev-img").attr("src",candid[0]["photo"]);
 					$("#achievement-popup h4").text("sos el mejor "+c["category"]);*/
-					console.log(candidates);
-					console.log(candid[0]);
+					//console.log(candidates);
+					//console.log(candid[0]);
 					achievements.setAchiev(c["text"]+" "+candidates[currentElection][candid[0]]["full_name"],c["category"],candid[0]);
 					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],c["text"]+" "+candidates[currentElection][candid[0]]["full_name"]);
 				}
@@ -95,7 +95,7 @@ var gameApp = (function(){
 			YQS.init(function(){				
 				candidates = YQS.getCandidatesByCountry(currentCountry);
 				questions = YQS.getQuestionsByElection(currentElection,getCategories);				
-				console.log(candidates);
+				//console.log(candidates);
 				//console.log(questions);
 				gameApp.mainMenu();
 			});
