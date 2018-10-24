@@ -36,7 +36,9 @@
 .game-stars{
 	font-size:3.5vh;
 }
-
+.star{	
+	width:3vh;
+}
 .menu-footer-btn{
 	width: 75%;
 	padding: 5%;

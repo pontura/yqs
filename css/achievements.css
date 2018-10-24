@@ -81,8 +81,8 @@
 
 .achiev-item p 
 {
-	/* width: 28vh; */
-	margin-left: 8vh;
+	width: 70%;
+	margin-left: 65px;
 	float: left;
 	vertical-align: middle;
 	font-size: 2vh;
