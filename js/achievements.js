@@ -52,7 +52,7 @@ var achievements = (function(){
 				$("#achievement_signal").show();					
 			let achiev = { name: n, category:cat, candidateIndex:cIndex};
 			achievements.push(achiev);
-			$("#achievement_signal").text(achievements.length);
+			$("#achievement_signal").text(achievements.length + "/10");
 			localStorage.setItem("achievements",  JSON.stringify(achievements));			
 		},
 
@@ -65,7 +65,7 @@ var achievements = (function(){
 			if(data!=null){
 				achievements = JSON.parse(data);
 				$("#achievement_signal").show();
-				$("#achievement_signal").text(achievements.length);
+				$("#achievement_signal").text(achievements.length + "/10");
 			}
 		}
 
