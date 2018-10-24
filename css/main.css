@@ -400,6 +400,11 @@ footer{
 	margin: 12px;
 }
 
+#share{
+    margin-top: 20px;
+    background-color: inherit;
+}
+
 
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
