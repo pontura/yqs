@@ -6,10 +6,17 @@
 	font-family: 'Cubano-Regular' !important;
 	font-weight: 400;
 	/* margin: 3px; */
+	padding: 5px;
 }
 
 #game-menu{
 
+}
+.singleTitle{
+	margin-top: 3.9vh;
+}
+.doubleTitle{
+	margin-top: 3vh;
 }
 
 #game-menu ul{
@@ -56,7 +63,7 @@
 
 #menu-btn-casual-title
 {
-	margin-top: 28px;
+	/* margin-top: 28px; */
 	margin-left: 10px;
 	/* width: 70%; */
 	float: left;

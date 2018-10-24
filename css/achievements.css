@@ -1,7 +1,7 @@
 #game-achievements .game-central {
-	overflow:unset;
-	height: 100%;
-	margin-bottom: 125px;
+	overflow: auto;
+	/* height: 100%; */
+	margin-bottom: 160px;
 }
 #game-achievements .button_bottom {
 	position: fixed;
@@ -16,29 +16,32 @@
 }
 
 #game-achievements h1 span{
-	background: yellow;
+	background: #F9C728;
 	padding: 10px;
 	border-radius: 5px;
+	color: black;
 }
 
 #game-achievements ul{
 	list-style: none;
 	padding: 0px 20px;
+	margin-bottom: 300px;
 }
 
 #game-achievements li{
 	float:left;
 	width:100%;
-	background-color: green;
+	background-color: #F9C728;
 	padding: 15px;
 	border-radius: 10px;
 	margin-bottom: 3px;
 	min-height: 12vh;
 	/* display: block; */
+	color: black;
 }
 
 #game-achievements li img{
-	width: 62px;
+	width: 18vw;
 	/* height: 69px; */
 	float: left;
 	margin-left: 0vh;
@@ -81,9 +84,9 @@
 
 .achiev-item p 
 {
-	width: 70%;
-	margin-left: 65px;
+	width: 65%;
+	margin-left: 25%;
 	float: left;
 	vertical-align: middle;
-	font-size: 2vh;
+	font-size: 4vw;
 }
