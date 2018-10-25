@@ -62,7 +62,7 @@ var gameApp = (function(){
 					categories.push(c);
 				}
 			}
-			//console.log(categories);			
+			console.log(categories);			
 		});
 	}
 

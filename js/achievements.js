@@ -67,7 +67,6 @@ var achievements = (function(){
 			if(data!=null){
 				achievements = JSON.parse(data);
 				$("#achievement_signal").show();
-			console.log(config);
 				$("#achievement_signal").text(achievements.length +"/"+config["total-cant"]);
 			}
 		}
