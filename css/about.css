@@ -1,0 +1,78 @@
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.about {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#about1{
+	background-color:#f5f5f5;
+	text-align:center;
+	margin-bottom:50px;
+	margin-top:-10px;
+	padding:40px;
+	//margin-left: 10%;
+	//margin-right: 10%;
+}
+
+#about1 h6{
+	line-height: 31px;
+    text-align: left;
+    font-weight: 400;
+    color: #999;
+    font-size: 1.5em;
+}
+
+#about{
+	background-color:#f5f5f5;
+	text-align:center;
+	margin-bottom:50px;
+	margin-top:-10px;
+	padding:40px;
+	//margin-left: 10%;
+	//margin-right: 10%;
+}
+
+.about h3 {	
+	text-align: left;
+	max-width: 1024px;
+	margin-left: 15px;
+	//margin-right: 38%;
+}
+
+.about h2 {
+	font-weight: normal;
+	color: #2baae3;
+}
+.about p {
+	margin: 10px;
+}
+
+.about .role{
+	background-color:#aaa;
+	text-align:center;
+	border-radius: 25px;
+	width:80%;
+	margin-left:10%;
+	padding-top:5%;
+	padding-bottom:5%;
+}
+
+.personal-link{
+	text-decoration:none;
+}
+
+.personal-img{
+	width:60%;
+}
+
+@media screen and (max-width:767px) {
+	.about h3{
+		//width: 500px;
+		margin-left:0px;
+		margin-right:0px;
+		margin: auto;
+	}
+}
