@@ -10,7 +10,7 @@
 }
 
 #game-menu{
-
+	
 }
 .singleTitle{
 	margin-top: 3.9vh;
@@ -47,6 +47,7 @@
 	width:3vh;
 }
 .menu-footer-btn{
+	position:relative;
 	width: 75%;
 	padding: 5%;
 	margin: 4px;
@@ -106,15 +107,15 @@
 
 .qty_signal
 {
-	float:left;
+	right: 0px;
+	top: 0px;
+	position: absolute;
 	background-color: red;
 	border-radius: 8px;
-	padding: 2px 6px;
-	margin-top: -23px;
-	margin-right: -2vh;
-	margin-left: -3vh;
-	float: right;
-	clear: right;
+	padding: 3px 8px;
+	margin-top: -12px;
+	margin-right: -20px;
+	/* clear: right; */
 	color: white;
 	font-size: 1em;
 }

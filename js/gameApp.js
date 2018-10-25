@@ -12,18 +12,25 @@ var gameApp = (function(){
 
 	var answers=[];
 
-	var category2logro_cant = 3;
-	
+	var lastGamePlayed;
+
+	var stars = {
+		casual:0,
+		normal:0,
+		qo:0,
+		qdq:0
+	};
+
 	function showHeader( divToShow )
 	{
 		/*$("#header-home").hide();
 		$("#header-qdq").hide();
 		$("#header-qo").hide();*/
 		$(".sectionHeader").hide();
-		
+
 		$(divToShow).show();
 	}
-	
+
 	function getCategories(quest){
 		//console.log(quest);
 		$.get(gameConfig.achievements.url, function( data ) {
@@ -59,8 +66,8 @@ var gameApp = (function(){
 
 	function setCategories(id){
 		let cat = categories.filter(function (item) {
-				return item.category == questions["all"][id]["category"];
-			});
+			return item.category == questions["all"][id]["category"];
+		});
 		if(cat.length>0){
 			//console.log(cat);
 			cat[0]["cant"]++;
@@ -75,7 +82,13 @@ var gameApp = (function(){
 					$("#achiev-img").attr("src",candid[0]["photo"]);
 					$("#achievement-popup h4").text("sos el mejor "+c["category"]);*/
 					//console.log(candidates);
-					//console.log(candid[0]);					
+					//console.log(candid[0]);
+					if(stars[lastGamePlayed]<3){
+						let star = "star"+stars[lastGamePlayed]+"-"+lastGamePlayed;
+						$("#"+star).attr("src","img/star1.png");
+						stars[lastGamePlayed]++;
+						localStorage.setItem("stars",  JSON.stringify(stars));
+					}
 					achievements.setAchiev(c["text"]+" "+candidates[currentElection][candid[0]]["full_name"],c["category"],candid[0]);
 					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],c["text"]+" "+candidates[currentElection][candid[0]]["full_name"]);
 				}
@@ -89,39 +102,54 @@ var gameApp = (function(){
 		$("#achievement-popup").show();
 		$("#achiev-img").attr("src",src);
 		$("#share").jsSocials("option", "text", "Tive "+text+" na YVI !!! ");
-		
+
 		$("#achievement-popup h4").text(text);
 	}
 
 	return {//funcion de inicio de la aplicación
 		init : function(){
+			//localStorage.clear();
 			$.get('static/gameConfig.json', function( data ) {
 				gameConfig = data;
 				//console.log(gameConfig);
+
+				YQS.init(function(){
+					achievements.loadAchievData(gameConfig.achievements);
+
+					let data = localStorage.getItem("answers");
+					if(data!=null){
+						answers = JSON.parse(data);
+						$("#footerHomeBtn3").removeClass("blocked");
+					}
+
+					candidates = YQS.getCandidatesByCountry(currentCountry);
+					questions = YQS.getQuestionsByElection(currentElection,getCategories);				
+					//console.log(candidates);
+					//console.log(questions);
+
+					let data2 = localStorage.getItem("stars");
+					if(data2!=null){
+						stars = JSON.parse(data2);
+						for(let key in stars){
+							for(let i=0;i<stars[key];i++){
+								let star = "star"+i+"-"+key;
+								$("#"+star).attr("src","img/star1.png");
+							}							
+						}						
+					}
+
+					gameApp.mainMenu();
+				});
 			});			
-			
+
 			setTimeout(function(){$.mobile.loading( "show", {
-			            text: "loading",
-			            textVisible: true,
-			            theme: "b",
-			            textonly: null,
-			            html: ""   });}, 1000);
+				text: "loading",
+				textVisible: true,
+				theme: "b",
+				textonly: null,
+				html: ""   });}, 1000);
 
-			YQS.init(function(){
-				achievements.loadAchievData();
 
-				let data = localStorage.getItem("answers");
-				if(data!=null){
-					answers = JSON.parse(data);
-					$("#footerHomeBtn3").removeClass("blocked");
-				}
-
-				candidates = YQS.getCandidatesByCountry(currentCountry);
-				questions = YQS.getQuestionsByElection(currentElection,getCategories);				
-				//console.log(candidates);
-				//console.log(questions);
-				gameApp.mainMenu();
-			});
 		},
 
 		mainMenu : function(){			
@@ -134,33 +162,34 @@ var gameApp = (function(){
 			showHeader("#header-casual");
 			$(".game-section").hide();
 			$("#game-casual").show();
-
+			lastGamePlayed = "casual";
 			casual.init(candidates[currentElection],questions["all"],gameConfig.casual);
 		},
-		
+
 		loadNormal : function(){
 			showHeader("#header-normal");
 			$(".game-section").hide();
 			$("#game-normal").show();
+			lastGamePlayed = "normal";
 			normal.init(candidates[currentElection],questions["all"],gameConfig.normal);
 		},	
 
 		loadQO : function(){
 			showHeader("#header-qo");
-			
+
 			$(".game-section").hide();
 			$("#game-qo").show();
-			
+			lastGamePlayed = "qo";
 			qo.init(candidates[currentElection],questions["all"],gameConfig.qdq);
-			
+
 		},
 		loadQDQ : function(){
-			
+
 			showHeader("#header-qdq");
-			
+
 			$(".game-section").hide();
 			$("#game-qdq").show();
-
+			lastGamePlayed = "qdq";
 			qdq.init(candidates[currentElection],gameConfig.qdq);
 			/*let selCandidate = parseInt(candidates[currentElection].length * Math.random());
 			//console.log(selCandidate);

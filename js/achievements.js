@@ -52,7 +52,8 @@ var achievements = (function(){
 				$("#achievement_signal").show();					
 			let achiev = { name: n, category:cat, candidateIndex:cIndex};
 			achievements.push(achiev);
-			$("#achievement_signal").text(achievements.length + "/10");
+			console.log(config);
+			$("#achievement_signal").text(achievements.length +"/"+config["total-cant"]);
 			localStorage.setItem("achievements",  JSON.stringify(achievements));			
 		},
 
@@ -60,12 +61,14 @@ var achievements = (function(){
 			return achievements;
 		},
 
-		loadAchievData :  function(){
+		loadAchievData :  function(conf){
+			config = conf;
 			let data = localStorage.getItem("achievements");
 			if(data!=null){
 				achievements = JSON.parse(data);
 				$("#achievement_signal").show();
-				$("#achievement_signal").text(achievements.length + "/10");
+			console.log(config);
+				$("#achievement_signal").text(achievements.length +"/"+config["total-cant"]);
 			}
 		}
 
