@@ -88,6 +88,8 @@ var gameApp = (function(){
 	function ShowAchievPopup(src,text){
 		$("#achievement-popup").show();
 		$("#achiev-img").attr("src",src);
+		$("#share").jsSocials("option", "text", "Tive "+text+" na YVI !!! ");
+		
 		$("#achievement-popup h4").text(text);
 	}
 

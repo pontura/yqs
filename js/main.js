@@ -57,26 +57,20 @@ function InitGame(){
 
 	$(".popup-close-btn").click(function(){
 		$(".popup").hide();
-	});	
+	});
 
 	$("#share").jsSocials({
     		showLabel: false,
    	 	showCount: false,
-    		shares: ["email", "twitter", "facebook", "googleplus", "whatsapp"]
+		media: function(){
+	        	html2canvas($("#achievement-popup .popup-sign")[0]).then(function(canvas) {
+                	// Convert and download as image 
+                	return Canvas2Image.convertToJPEG(canvas); 
+                	});
+		},
+    		shares: ["facebook", "twitter", "whatsapp", "googleplus"]
 	});
 
-	$("#share-btn").click(function(){
-
-        	html2canvas($("#achievement-popup .popup-sign")[0]).then(function(canvas) {
-                            
-                // Convert and download as image 
-                Canvas2Image.saveAsPNG(canvas); 
-                $("#achievement-popup").append(canvas);
-                // Clean up 
-                //document.body.removeChild(canvas);
-    });
-
-	});
 }
 
 $(document).ready(function() {

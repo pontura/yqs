@@ -37,13 +37,13 @@ var achievements = (function(){
 	return {//funcion de inicio de la aplicación
 		init : function(c){
 			candidates = c;			
-			console.log(candidates);
+			//console.log(candidates);
 
 			$("#achievements-back-btn").unbind().click(function(){
 				Back();	
 			});
 
-			console.log(gameApp.achievTexts);
+			//console.log(gameApp.achievTexts);
 			SetAchiev();
 		},
 
