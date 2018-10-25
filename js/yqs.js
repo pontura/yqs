@@ -6,7 +6,7 @@ var YQS = (function(){
 	var questions = {};
 	var candidates = {};
 
-	function candidatesByCountry (countryName) {
+	function candidatesByCountry (countryName, callback) {
 
 		if(config==null){
 			//console.log(countryName+" : "+config);
@@ -90,13 +90,15 @@ var YQS = (function(){
 							
 							promises.push(candidate);
 						})
+					callback(candidates);
 				})
 				
 				//console.log(promises);
 				candidates[election.name] = promises;
 				//console.log(candidates);
+				
 			})		
-		}
+		}		
 		return candidates;
 	}
 

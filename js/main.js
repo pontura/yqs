@@ -53,22 +53,30 @@ function InitGame(){
 	$("#footerHomeBtn3").click(function(){
 		gameApp.loadSummary();
 	});
-	
+
 
 	$(".popup-close-btn").click(function(){
 		$(".popup").hide();
 	});
 
+	//console.log(jsSocials.shares);
+
+	jsSocials.setDefaults("facebook", {
+    		shareUrl: "https://facebook.com/sharer/sharer.php?u={url}&quote={text}"
+	});
+
+	//console.log(jsSocials.shares);
+
 	$("#share").jsSocials({
-    		showLabel: false,
-   	 	showCount: false,
+		showLabel: false,
+		showCount: false,
 		media: function(){
-	        	html2canvas($("#achievement-popup .popup-sign")[0]).then(function(canvas) {
-                	// Convert and download as image 
-                	return Canvas2Image.convertToJPEG(canvas); 
-                	});
+			html2canvas($("#achievement-popup .popup-sign")[0]).then(function(canvas) {
+				// Convert and download as image 
+				return Canvas2Image.convertToJPEG(canvas); 
+			});
 		},
-    		shares: ["facebook", "twitter", "whatsapp", "googleplus"]
+		shares: ["facebook", "twitter", "whatsapp", "googleplus"]
 	});
 
 }
@@ -97,6 +105,17 @@ function SetNavigatorPos(divId,dotNumber){
 		else
 			$( this ).removeClass("done");
 	});
+}
+
+function GetUrlValue(varsearch){
+	var searchstring = window.location.search.substring(1);
+	var variablearray = searchstring.split('&');
+	for(var i = 0; i < variablearray.length; i++){
+		var keyvaluepair = variablearray[i].split('=');
+		if(keyvaluepair[0] == varsearch){
+			return keyvaluepair[1];
+		}
+	}
 }
 
 //gameApp.mainMenu();

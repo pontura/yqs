@@ -42,8 +42,10 @@ var qdq = (function(){
 			if($(this).hasClass("interactable")){
 				if(candidatesSel[selCandidate]["full_name"]==$(this).attr('name')){
 					$(this).addClass('right-answ');
+					gameApp.addCandidAnsw(candidatesSel[selCandidate]["full_name"],1)
 					correctAns++;
 				}else{
+					gameApp.addCandidAnsw(candidatesSel[selCandidate]["full_name"],-1)
 					$(this).addClass('wrong-answ');
 				}
 				$(".qdq-btn").removeClass("interactable");

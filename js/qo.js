@@ -15,7 +15,7 @@ var qo = (function(){
 		let html = "";
 		for(let i=0;i<candidatesSel.length;i++){
 			html+="<div class='qo_option'><button class='interactable' name="+i+"><img src='img/hide.png'><p>"+
-				candidatesSel[i]["long_answer"]+
+				candidatesSel[i]["long_answer"][questions[selQuestion]["originalIndex"]]+
 				"</p></button></div>";		
 		}
 		$("#qo-options").html(html);
@@ -30,7 +30,8 @@ var qo = (function(){
 		selCandidate = parseInt(candidatesSel.length * Math.random());
 		selQuestion =  parseInt(questions.length * Math.random());
 		//console.log(questions[selQuestion]);
-		console.log(candidatesSel);
+		//console.log(questions[selQuestion]["originalIndex"]);
+		//console.log(candidatesSel);
 		
 		$("#qo_question").html(questions[selQuestion]["question"]);
 		$("#qo-header img").attr("src",candidatesSel[selCandidate]["photo"]);
@@ -42,9 +43,10 @@ var qo = (function(){
 			if($(this).hasClass("interactable")){
 				if(selCandidate==$(this).attr('name')){
 					$(this).addClass('right-answ');
-					
+					gameApp.addCandidAnsw(candidatesSel[selCandidate]["full_name"],1)
 					correctAns++;
 				}else{
+					gameApp.addCandidAnsw(candidatesSel[selCandidate]["full_name"],-1)
 					$(this).addClass('wrong-answ');
 				}
 
