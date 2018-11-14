@@ -62,6 +62,7 @@ var gameApp = (function(){
 					categories.push(c);
 				}
 			}
+			achievements.loadAchievData(gameConfig.achievements,categories);
 			console.log(categories);			
 		});
 	}
@@ -129,7 +130,7 @@ var gameApp = (function(){
 				//console.log(gameConfig);
 
 				YQS.init(function(){
-					achievements.loadAchievData(gameConfig.achievements);
+					//achievements.loadAchievData(gameConfig.achievements);
 
 					let data = localStorage.getItem("answers");
 					if(data!=null){

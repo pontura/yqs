@@ -25,6 +25,24 @@ var achievements = (function(){
 
 	}
 
+	function SetAchievList(categories){
+		console.log(achievements);
+		let html="<ul>";
+
+		for(let i=0;i<categories.length;i++){
+			let achs = achievements.filter(function (item) {
+					return item.category == categories[i]["category"];
+			});
+			if(achs.length==0)
+			html+="<li class='achiev-item list' name='"+categories[i]["category"]+"'><img src='img/cup.png'/><p>"+categories[i]["text"]+"</p></li>";
+			
+		}
+
+		html+="</ul>"
+
+		$("#achievements-list").html(html);	
+	}
+
 	function achievDetail(i){
 		let src = candidates[achievements[i]["candidateIndex"]]["photo"];
 		gameApp.showAchievPopup(src,achievements[i]["name"]);
@@ -53,6 +71,7 @@ var achievements = (function(){
 			let achiev = { name: n, category:cat, candidateIndex:cIndex};
 			achievements.push(achiev);
 			console.log(config);
+			$(".achiev-item.list[name*='"+cat+"']").remove();
 			$("#achievement_signal").text(achievements.length +"/"+config["total-cant"]);
 			localStorage.setItem("achievements",  JSON.stringify(achievements));			
 		},
@@ -61,14 +80,16 @@ var achievements = (function(){
 			return achievements;
 		},
 
-		loadAchievData :  function(conf){
+		loadAchievData :  function(conf,categories){
 			config = conf;
+			console.log(categories);			
 			let data = localStorage.getItem("achievements");
 			if(data!=null){
 				achievements = JSON.parse(data);
 				$("#achievement_signal").show();
 				$("#achievement_signal").text(achievements.length +"/"+config["total-cant"]);
 			}
+			SetAchievList(categories);
 		}
 
 	};

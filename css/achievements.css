@@ -25,7 +25,7 @@
 #game-achievements ul{
 	list-style: none;
 	padding: 0px 20px;
-	margin-bottom: 300px;
+	//margin-bottom: 300px;
 }
 
 #game-achievements li{
@@ -37,6 +37,10 @@
 	margin-bottom: 3px;
 	min-height: 12vh;
 	/* display: block; */
+	color: black;
+}
+#achievements-list li{
+	background-color: #333;
 	color: black;
 }
 
