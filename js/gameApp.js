@@ -36,7 +36,8 @@ var gameApp = (function(){
 	function getCategories(quest){
 		//console.log(quest);
 		$.get(gameConfig.achievements.url, function( data ) {
-			let achievTexts = cvs2JSO(data);
+			let achievTexts = cvs2JSO(data);			
+			let savedAchivs = achievements.getAchievements();
 			for(q of quest){
 				let cat = categories.filter(function (item) {
 					return item.category == q["category"];
@@ -45,9 +46,7 @@ var gameApp = (function(){
 					let catConfig = achievTexts.filter(function (item) {
 						return item.category == q["category"];
 					});
-
-					let savedAchivs = achievements.getAchievements();
-
+					
 					let savedAchiv = null;
 					if(savedAchivs!=null){
 						savedAchiv = savedAchivs.filter(function (item) {
@@ -62,7 +61,10 @@ var gameApp = (function(){
 					categories.push(c);
 				}
 			}
-			achievements.loadAchievData(gameConfig.achievements,categories);
+
+
+
+			achievements.setAchievList(categories);
 			console.log(categories);			
 		});
 	}
@@ -77,7 +79,7 @@ var gameApp = (function(){
 		}
 
 		for(c of categories){
-			if(!c["logro"]){
+			if(c["logro"]===false){
 				if(c["cant"]==c["cant2show"]){
 					c["logro"]=true;
 					let candid = summary.getCategoryBestWorstCandidatesIds();
@@ -93,7 +95,7 @@ var gameApp = (function(){
 						localStorage.setItem("stars",  JSON.stringify(stars));
 					}
 					achievements.setAchiev(c["text"]+" "+candidates[currentElection][candid[0]]["full_name"],c["category"],candid[0]);
-					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],c["text"]+" "+candidates[currentElection][candid[0]]["full_name"]);
+					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],c["text"]+" "+candidates[currentElection][candid[0]]["full_name"],c["category"]);
 				}
 			}
 		}
@@ -101,20 +103,26 @@ var gameApp = (function(){
 		//console.log(categories);
 	}
 
-	function ShowAchievPopup(src,text){
+	function ShowAchievPopup(src,text,category){
 		console.log(src+" - "+text);
 		$("#achievement-popup").show();
 		$("#achiev-img").attr("src",src);
+		$("#achiev-icon").attr("src","img/"+category+".png");
 		$("#share").jsSocials("option", "text", "Tive "+text+" na YVI !!! ");
 
 		$("#achievement-popup h4").text(text);
 	}
 
 	function getCandidates4Achiv(candid){
+		
 		for(let i=0;i<candid[currentElection].length;i++){
+			let isEspeci = achievements.haveCandIDEspecialista(i);
+			let isExpert = achievements.haveCandIDExperto(i);
 			candidatesAnsw[candid[currentElection][i]["full_name"]] = {
 				positive:0,
 				negative:0,
+				especialista:isEspeci,
+				experto:isExpert
 			};
 		}
 		candidatesAnsw["achiev1"] = 2;
@@ -130,7 +138,7 @@ var gameApp = (function(){
 				//console.log(gameConfig);
 
 				YQS.init(function(){
-					//achievements.loadAchievData(gameConfig.achievements);
+					achievements.loadAchievData(gameConfig.achievements);
 
 					let data = localStorage.getItem("answers");
 					if(data!=null){
@@ -268,9 +276,10 @@ var gameApp = (function(){
 				candidatesAnsw[name]["positive"]=0;
 				candidatesAnsw[name]["negative"]++;
 			}else if(val>0){
+				
 				candidatesAnsw[name]["positive"]++;
 				candidatesAnsw[name]["negative"]=0;
-				if(candidatesAnsw[name]["positive"]==candidatesAnsw["achiev1"]){
+				if(candidatesAnsw[name]["positive"]==candidatesAnsw["achiev1"]&&candidatesAnsw[name]["especialista"]==false){
 					let cand = candidates[currentElection].filter(function (item) {
 						return item["full_name"] == name;
 					});
@@ -280,9 +289,10 @@ var gameApp = (function(){
 						stars[lastGamePlayed]++;
 						localStorage.setItem("stars",  JSON.stringify(stars));
 					}
-					achievements.setAchiev("Especialista en "+cand[0]["full_name"],"Especialista",candidates[currentElection].indexOf(cand[0]));
-					ShowAchievPopup(cand[0]["photo"],"Especialista en "+cand[0]["full_name"]);
-				}else if(candidatesAnsw[name]["positive"]==candidatesAnsw["achiev2"]){
+					candidatesAnsw[name]["especialista"]=true;
+					achievements.setAchiev("Especialista en "+cand[0]["full_name"],"especialista",candidates[currentElection].indexOf(cand[0]));
+					ShowAchievPopup(cand[0]["photo"],"Especialista en "+cand[0]["full_name"],"especialista");
+				}else if(candidatesAnsw[name]["positive"]==candidatesAnsw["achiev2"]&&candidatesAnsw[name]["experto"]==false){
 					let cand = candidates[currentElection].filter(function (item) {
 						return item["full_name"] == name;
 					});
@@ -293,8 +303,9 @@ var gameApp = (function(){
 						stars[lastGamePlayed]++;
 						localStorage.setItem("stars",  JSON.stringify(stars));
 					}
-					achievements.setAchiev("Experto en "+cand[0]["full_name"],"Experto",candidates[currentElection].indexOf(cand[0]));
-					ShowAchievPopup(cand[0]["photo"],"Experto en "+cand[0]["full_name"]);
+					candidatesAnsw[name]["experto"] = true;
+					achievements.setAchiev("Experto en "+cand[0]["full_name"],"experto",candidates[currentElection].indexOf(cand[0]));
+					ShowAchievPopup(cand[0]["photo"],"Experto en "+cand[0]["full_name"],"experto");
 				}				
 			}else{
 				candidatesAnsw[name]["positive"]=0;

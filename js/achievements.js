@@ -11,7 +11,7 @@ var achievements = (function(){
 		let html="<h1><span>"+achievements.length+"</span> LOGROS</h1><ul>";
 
 		for(let i=0;i<achievements.length;i++){
-			html+="<li class='achiev-item' name='"+i+"'><img src='img/cup.png'/><p>"+achievements[i]["name"]+"</p></li>";
+			html+="<li class='achiev-item' name='"+i+"'><img src='img/"+achievements[i]["category"]+".png'/><p>"+achievements[i]["name"]+"</p></li>";
 			
 		}
 
@@ -34,7 +34,7 @@ var achievements = (function(){
 					return item.category == categories[i]["category"];
 			});
 			if(achs.length==0)
-			html+="<li class='achiev-item list' name='"+categories[i]["category"]+"'><img src='img/cup.png'/><p>"+categories[i]["text"]+"</p></li>";
+			html+="<li class='achiev-item list' name='"+categories[i]["category"]+"'><img src='img/"+categories[i]["category"]+".png'/><p>"+categories[i]["text"]+"</p></li>";
 			
 		}
 
@@ -45,7 +45,7 @@ var achievements = (function(){
 
 	function achievDetail(i){
 		let src = candidates[achievements[i]["candidateIndex"]]["photo"];
-		gameApp.showAchievPopup(src,achievements[i]["name"]);
+		gameApp.showAchievPopup(src,achievements[i]["name"],achievements[i]["category"]);
 	}	
 
 	function Back(){
@@ -80,17 +80,34 @@ var achievements = (function(){
 			return achievements;
 		},
 
-		loadAchievData :  function(conf,categories){
+		haveCandIDEspecialista : function(candid){
+			let ach = achievements.filter(function (item) {
+					return (item.category == "especialista" && item.candidateIndex == candid);
+			});
+			return ach.length>0;
+		},
+
+		haveCandIDExperto : function(candid){
+			let ach = achievements.filter(function (item) {
+					return (item.category == "experto" && item.candidateIndex == candid);
+			});
+			return ach.length>0;
+		},
+
+		loadAchievData :  function(conf){
 			config = conf;
-			console.log(categories);			
 			let data = localStorage.getItem("achievements");
 			if(data!=null){
 				achievements = JSON.parse(data);
 				$("#achievement_signal").show();
 				$("#achievement_signal").text(achievements.length +"/"+config["total-cant"]);
+			}else{
+				$("#achievement_signal").text("0/"+config["total-cant"])
 			}
-			SetAchievList(categories);
-		}
+		//	SetAchievList(categories);
+		},
+
+		setAchievList : SetAchievList
 
 	};
 })();
