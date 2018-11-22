@@ -1,0 +1,142 @@
+#prode-options{
+	background-image: url(../img/cross.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 42vh;
+}
+
+#prode-options button
+{
+	position: relative;
+	height: 21vh;
+	margin-bottom: 7px;
+	//background: transparent;
+	background: rgba(0,0,0,0.1);
+	border: none;
+}
+
+#prode_si{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+#prode_si_pero{
+	position:absolute;
+	top:0px;
+	right:0px;
+	text-align:right;
+	font-size:18px;
+	line-height:18px;	
+}
+
+#prode_no_pero{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	text-align:left;
+	font-size:18px;
+	line-height:18px;
+}
+
+#prode_no{
+	position:absolute;
+	bottom:0px;
+	right:0px;
+}
+
+
+#game-prode .button_bottom
+{
+	margin-bottom:150px;
+}
+
+.avatar{
+	position: absolute;
+	left: 50vw;
+	top: 30vh;
+	text-align: center;
+	margin-left: -35px;
+	margin-top: -50px;
+}
+
+.avatar img{
+	
+}
+
+.avatar-cabeza{
+	width: 90px;
+	margin-left: -70px;
+	margin-top: -35px;
+}
+
+.avatar-cuerpo{
+	width: 60px;
+	//margin-left: -30px;
+	margin-top: 100px;
+}
+#prode-header{
+	text-align:center;
+	margin: 10px 30px 30px 10px;
+}
+
+#prode-header h6{
+	font-size:3.5vh;
+	margin-bottom:1px;
+}
+
+#prode-header p{
+    font-size: 2vh;
+    line-height: 2.5vh;
+    margin-top: 0px;	
+}
+
+.prode-btn{
+	color: white;
+	width: 100%;
+}
+
+.prode-btn img{
+	height: 50%;
+	margin-bottom:10px;
+}
+
+.prode-btn p{
+	margin:0px;
+}
+
+.prode-footer-btn{
+	margin-top: 1vh;
+	border: none;
+	font-size: 4vh;
+	padding: 1vh 6vh;
+}
+
+.candidato
+{
+	position:absolute;
+	text-align:center;
+	font-size: 1.7vh;
+	line-height: 1.5vh;
+	width: 100%;
+}
+.partido
+{
+	position:absolute;
+	text-align:center;	
+	font-size: 1.4vh;
+	font-weight:800;
+	line-height: 1.5vh;
+	width: 100%;
+}
+
+.prode-btn.right-answ{
+	background-color:green;
+}
+
+.prode-btn.wrong-answ{
+	background-color:red;
+}
+
+
+

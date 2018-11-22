@@ -26,7 +26,7 @@ var achievements = (function(){
 	}
 
 	function SetAchievList(categories){
-		console.log(achievements);
+		//console.log(achievements);
 		let html="<ul>";
 
 		for(let i=0;i<categories.length;i++){

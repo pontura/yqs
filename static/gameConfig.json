@@ -17,6 +17,11 @@
 		"questNumber":5
 	},
 
+	"prode":{
+		"candidates":4,
+		"questNumber":5
+	},
+
 	"achievements":{
 		"url":"https://docs.google.com/spreadsheets/d/1GtEEufaYTkgp1MIrrKvQ1XwUoe0ApNo0S2chonoBTGM/gviz/tq?tqx=out:csv",
 		"total-cant":14

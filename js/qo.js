@@ -80,11 +80,11 @@ var qo = (function(){
 	}
 
 	return {//funcion de inicio de la aplicación
-		init : function(c,q,qdqConfig){
+		init : function(c,q,qoConfig){
 			navPos=0;
 			correctAns=0;
 			summaryDone=false;
-			config = qdqConfig;
+			config = qoConfig;
 			candidates = c;
 			questions = q;
 

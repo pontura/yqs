@@ -65,7 +65,7 @@ var gameApp = (function(){
 
 
 			achievements.setAchievList(categories);
-			console.log(categories);			
+			//console.log(categories);			
 		});
 	}
 
@@ -204,7 +204,7 @@ var gameApp = (function(){
 			$(".game-section").hide();
 			$("#game-qo").show();
 			lastGamePlayed = "qo";
-			qo.init(candidates[currentElection],questions["all"],gameConfig.qdq);
+			qo.init(candidates[currentElection],questions["all"],gameConfig.qo);
 
 		},
 		loadQDQ : function(){
@@ -215,6 +215,24 @@ var gameApp = (function(){
 			$("#game-qdq").show();
 			lastGamePlayed = "qdq";
 			qdq.init(candidates[currentElection],gameConfig.qdq);
+			/*let selCandidate = parseInt(candidates[currentElection].length * Math.random());
+			//console.log(selCandidate);
+			let frase = ""
+			while(frase==""){
+				frase = candidates[currentElection][selCandidate]["long_answer"][ parseInt(candidates[currentElection][selCandidate]["long_answer"].length * Math.random())];
+			}
+			$("#qdq-frase").html(frase);
+			console.log(frase);*/
+		},
+
+		loadProde : function(){
+
+			showHeader("#header-prode");
+
+			$(".game-section").hide();
+			$("#game-prode").show();
+			lastGamePlayed = "prode";
+			prode.init(candidates[currentElection],questions["all"],gameConfig.prode);
 			/*let selCandidate = parseInt(candidates[currentElection].length * Math.random());
 			//console.log(selCandidate);
 			let frase = ""
