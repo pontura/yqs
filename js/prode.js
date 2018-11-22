@@ -14,7 +14,7 @@ var prode = (function(){
 	var summaryDone=false;
 
 	var cantOpt = 4;
-	var randStep = 10;
+	var randStep = 5;
 
 	var h;
 
@@ -74,7 +74,8 @@ var prode = (function(){
 				{
 					duration:animTime,
 					step: function( now, fx ) {
-						let r = Math.round(Math.sin(fx.pos*Math.PI*animTime))*randStep;
+						let p = fx.pos.toFixed(5);
+						let r = Math.round(Math.sin(p*Math.PI*animTime))*randStep;
 						r+=h;					
 						$(this).children(".avatar-cuerpo").css("height",r+"px");
 						},
