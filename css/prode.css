@@ -114,19 +114,20 @@
 
 .candidato
 {
-	position:absolute;
-	text-align:center;
-	font-size: 1.7vh;
-	line-height: 1.5vh;
+	position: absolute;
+	text-align: center;
+	font-size: 15px;
+	line-height: 14px;
 	width: 100%;
+	margin-top: -10px;
 }
 .partido
 {
-	position:absolute;
-	text-align:center;	
-	font-size: 1.4vh;
-	font-weight:800;
-	line-height: 1.5vh;
+	position: absolute;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 800;
+	line-height: 10px;
 	width: 100%;
 }
 
