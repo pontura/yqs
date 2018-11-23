@@ -99,6 +99,10 @@ var prode = (function(){
 		let hue = 360*navPos/candidatesSel.length;
 		$("#avatar_"+navPos+" .avatar-cuerpo").css({'-webkit-filter': 'hue-rotate('+hue+'deg)', 'filter': 'hue-rotate('+hue+'deg)'});
 		$("#avatar_"+navPos+" .avatar-cabeza").css({'-webkit-filter': 'hue-rotate(0deg)', 'filter': 'hue-rotate(0deg)'});
+		$("#avatar_"+navPos).hide();
+		$("#avatar_"+navPos+" img" ).ready( function() {
+  			$("#avatar_"+navPos).show();
+		});
 	}
 
 	function SetSummary(){
