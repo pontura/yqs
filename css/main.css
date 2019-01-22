@@ -7,6 +7,13 @@ body{
 	color:white;
 }
 
+#reset-btn{
+	position: absolute;
+	background: grey;
+	z-index: 10;
+	left: 45%;
+}
+
 button:focus { outline:0 !important; }
 
 .fade

@@ -83,6 +83,18 @@ function InitGame(){
 		shares: ["facebook", "twitter", "whatsapp", "googleplus"]
 	});
 
+	$(".yqslogo").click(function(){	
+		if($("#reset-btn").is(":visible"))
+			$("#reset-btn").hide();
+		else
+			$("#reset-btn").show();
+	});
+
+	$("#reset-btn").click(function(){
+		localStorage.clear();
+		location.reload();
+	});
+
 }
 
 $(document).ready(function() {
@@ -121,5 +133,8 @@ function GetUrlValue(varsearch){
 		}
 	}
 }
+
+
+
 
 //gameApp.mainMenu();
