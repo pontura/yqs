@@ -105,7 +105,6 @@ var prode = (function(){
 		$("#avatar_"+navPos).css({"top":"-500vw","left":"-500vh"});
 
 		$("#avatar_"+navPos+" img.avatar-cabeza").load(function(){
-    			console.log("aca");
 			$("#avatar_"+navPos).css({"top":"30vh","left":"50vw"});
 			$(".prode-btn").addClass("interactable");
 		});
