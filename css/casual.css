@@ -25,7 +25,8 @@
 	position: fixed;
 	bottom: 0;
 	width: 110%;
-	height: 178px;
+	//height: 178px;
+	height: 20%;
 	margin-left: -14px;
 }
 .navigator
