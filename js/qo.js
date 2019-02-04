@@ -26,6 +26,9 @@ var qo = (function(){
 	}
 
 	function Reset(){
+
+		$("body").scrollTop(0);
+		
 		candidatesSel = randomSubArray(candidates,config["candidates"]);
 		selCandidate = parseInt(candidatesSel.length * Math.random());
 		selQuestion =  parseInt(questions.length * Math.random());
