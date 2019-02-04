@@ -14,11 +14,11 @@ var prode = (function(){
 	var summaryDone=false;
 
 	var cantOpt = 4;
-	var randStep = 5;
+	var randStep = 2;
 
 	var h;
 
-	var animTime = 2000;
+	var animTime = 3000;
 
 	function setOptions(){
 		let html = "";
