@@ -1,5 +1,5 @@
 #prode-options{
-	background-image: url(../img/cross.png);
+	background-image: url(../img/arrowsB2x.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 42vh;
@@ -112,7 +112,7 @@
 	padding: 1vh 6vh;
 }
 
-.candidato
+#prode-options .candidato
 {
 	position: absolute;
 	text-align: center;
@@ -121,7 +121,7 @@
 	width: 100%;
 	margin-top: -10px;
 }
-.partido
+#prode-options .partido
 {
 	position: absolute;
 	text-align: center;

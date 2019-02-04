@@ -45,13 +45,11 @@
 	padding: 1vh 6vh;
 }
 
-.candidato
-{
+#game-qdq .candidato{
 	font-size: 1.7vh;
 	line-height: 2vh;
 }
-.partido
-{
+#game-qdq .partido{
 	font-size: 1.4vh;
 	font-weight:800;
 	line-height: 2vh;
