@@ -92,7 +92,8 @@ var gameApp = (function(){
 						let star = "star"+stars[lastGamePlayed]+"-"+lastGamePlayed;
 						$("#"+star).attr("src","img/star1.png");
 						stars[lastGamePlayed]++;
-						localStorage.setItem("stars",  JSON.stringify(stars));
+						localStorage.setItem(currentCountry+"_"+currentElection+
+							"stars",  JSON.stringify(stars));
 					}
 					achievements.setAchiev(c["text"]+" "+candidates[currentElection][candid[0]]["full_name"],c["category"],candid[0]);
 					ShowAchievPopup(candidates[currentElection][candid[0]]["photo"],c["text"]+" "+candidates[currentElection][candid[0]]["full_name"],c["category"]);
@@ -133,6 +134,13 @@ var gameApp = (function(){
 	return {//funcion de inicio de la aplicación
 		init : function(){
 			//localStorage.clear();
+			
+			currentCountry = GetUrlValue("country");
+			currentElection = GetUrlValue("election");
+
+			console.log("Country="+currentCountry);
+			console.log("Election="+currentElection);
+
 			$.get('static/gameConfig.json', function( data ) {
 				gameConfig = data;
 				//console.log(gameConfig);
@@ -140,7 +148,8 @@ var gameApp = (function(){
 				YQS.init(function(){
 					achievements.loadAchievData(gameConfig.achievements);
 
-					let data = localStorage.getItem("answers");
+					let data = localStorage.getItem(currentCountry+"_"+currentElection+
+						"answers");
 					if(data!=null){
 						answers = JSON.parse(data);
 						$("#footerHomeBtn3").removeClass("blocked");
@@ -151,7 +160,8 @@ var gameApp = (function(){
 					//console.log(candidates);
 					//console.log(questions);
 
-					let data2 = localStorage.getItem("stars");
+					let data2 = localStorage.getItem(currentCountry+"_"+currentElection+
+						"stars");
 					if(data2!=null){
 						stars = JSON.parse(data2);
 						for(let key in stars){
@@ -279,7 +289,8 @@ var gameApp = (function(){
 			if(answers.length==0)
 				$("#footerHomeBtn3").removeClass("blocked");
 			answers.push(ans);
-			localStorage.setItem("answers",  JSON.stringify(answers));
+			localStorage.setItem(currentCountry+"_"+currentElection+"answers",
+				JSON.stringify(answers));
 			setCategories(ans["originalIndex"]);
 		},
 
@@ -305,7 +316,8 @@ var gameApp = (function(){
 						let star = "star"+stars[lastGamePlayed]+"-"+lastGamePlayed;
 						$("#"+star).attr("src","img/star1.png");
 						stars[lastGamePlayed]++;
-						localStorage.setItem("stars",  JSON.stringify(stars));
+						localStorage.setItem(currentCountry+"_"+currentElection+"stars",
+							JSON.stringify(stars));
 					}
 					candidatesAnsw[name]["especialista"]=true;
 					achievements.setAchiev("Especialista en "+cand[0]["full_name"],"especialista",candidates[currentElection].indexOf(cand[0]));
@@ -319,7 +331,8 @@ var gameApp = (function(){
 						let star = "star"+stars[lastGamePlayed]+"-"+lastGamePlayed;
 						$("#"+star).attr("src","img/star1.png");
 						stars[lastGamePlayed]++;
-						localStorage.setItem("stars",  JSON.stringify(stars));
+						localStorage.setItem(currentCountry+"_"+currentElection+"stars",
+							JSON.stringify(stars));
 					}
 					candidatesAnsw[name]["experto"] = true;
 					achievements.setAchiev("Experto en "+cand[0]["full_name"],"experto",candidates[currentElection].indexOf(cand[0]));

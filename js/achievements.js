@@ -73,7 +73,7 @@ var achievements = (function(){
 			console.log(config);
 			$(".achiev-item.list[name*='"+cat+"']").remove();
 			$("#achievement_signal").text(achievements.length +"/"+config["total-cant"]);
-			localStorage.setItem("achievements",  JSON.stringify(achievements));			
+			localStorage.setItem(gameApp.getCountry()+"_"+gameApp.getElection()+"achievements",  JSON.stringify(achievements));			
 		},
 
 		getAchievements : function(){
@@ -96,7 +96,7 @@ var achievements = (function(){
 
 		loadAchievData :  function(conf){
 			config = conf;
-			let data = localStorage.getItem("achievements");
+			let data = localStorage.getItem(gameApp.getCountry()+"_"+gameApp.getElection()+"achievements");
 			if(data!=null){
 				achievements = JSON.parse(data);
 				$("#achievement_signal").show();

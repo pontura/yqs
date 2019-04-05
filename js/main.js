@@ -129,7 +129,7 @@ function GetUrlValue(varsearch){
 	for(var i = 0; i < variablearray.length; i++){
 		var keyvaluepair = variablearray[i].split('=');
 		if(keyvaluepair[0] == varsearch){
-			return keyvaluepair[1];
+			return decodeURIComponent(keyvaluepair[1]);
 		}
 	}
 }
