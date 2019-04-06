@@ -2,15 +2,16 @@
 	background-image: url(../img/arrowsB2x.png);
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 42vh;
+	height: 54vh;
 }
 
 #prode-options button
 {
 	position: relative;
-	height: 21vh;
+	height: 27vh;
 	margin-bottom: 7px;
-	//background: transparent;
+	//
+	background: transparent;
 	background: rgba(0,0,0,0.1);
 	border: none;
 }
@@ -19,6 +20,9 @@
 	position:absolute;
 	top:0px;
 	left:0px;
+	margin: 22px;
+	color: white;
+	font-size: 4em;
 }
 
 #prode_si_pero{
@@ -26,23 +30,32 @@
 	top:0px;
 	right:0px;
 	text-align:right;
-	font-size:18px;
-	line-height:18px;	
+	font-size: 20px;
+	margin: 22px;
+	line-height:18px;
+	width: 51%;
+	color: white;
 }
 
 #prode_no_pero{
+	width: 50%;
 	position:absolute;
 	bottom:0px;
 	left:0px;
 	text-align:left;
 	font-size:18px;
 	line-height:18px;
+	margin: 22px;
+	color: white;
 }
 
 #prode_no{
 	position:absolute;
 	bottom:0px;
 	right:0px;
+	color: white;
+	margin: 22px;
+	font-size: 4em;
 }
 
 
@@ -57,7 +70,7 @@
 	top: 30vh;
 	text-align: center;
 	margin-left: -35px;
-	margin-top: -50px;
+	margin-top: -44px;
 }
 
 .avatar img{
@@ -67,7 +80,7 @@
 .avatar-cabeza{
 	width: 90px;
 	margin-left: -70px;
-	margin-top: -35px;
+	margin-top: -27px;
 }
 
 .avatar-cuerpo{
@@ -119,7 +132,8 @@
 	font-size: 15px;
 	line-height: 14px;
 	width: 100%;
-	margin-top: -10px;
+	margin-top: 7px;
+	color: #915792;
 }
 #prode-options .partido
 {
@@ -129,6 +143,7 @@
 	font-weight: 800;
 	line-height: 10px;
 	width: 100%;
+	color: #915792;
 }
 
 .prode-btn.right-answ{
